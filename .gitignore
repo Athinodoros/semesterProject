@@ -9,7 +9,7 @@
 
 node_modules
 .idea
-
+coveragre
 tmp/
 *.tmp
 *.bak
@@ -216,3 +216,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 .idea/workspace.xml
+coverage/coverage.json
