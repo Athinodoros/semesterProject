@@ -5,7 +5,11 @@
 *.pydevproject
 .project
 .metadata
+
+
 node_modules
+.idea
+
 tmp/
 *.tmp
 *.bak
