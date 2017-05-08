@@ -6,7 +6,7 @@ var MongoClient = require('mongodb').MongoClient;
 var Server = require('mongodb').Server;
 var tunnel = require('tunnel-ssh');
 var os = require("os");
-if (os.type() == 'Linux') {
+/*if (os.type() == 'Linux') {
     var config = {
         username: 'root',
         host: '127.0.0.1',
@@ -19,7 +19,7 @@ if (os.type() == 'Linux') {
     };
 
 }
-else {
+else {*/
     var config = {
         username: 'root',
         host: '45.76.95.12',
@@ -30,7 +30,7 @@ else {
         // localHost: '127.0.0.1',
         localPort: 27000
     };
-}
+//}
 console.log(process.platform);
 console.log(os.type());
 var Promise = require('promise');
