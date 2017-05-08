@@ -82,5 +82,5 @@ describe("Test the facade on:", function () {
     });
 
 
-})
+});
 
