@@ -9,7 +9,7 @@
 
 node_modules
 .idea
-coveragre
+coverage
 tmp/
 *.tmp
 *.bak
