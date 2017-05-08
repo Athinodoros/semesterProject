@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var facade = require('./dbFacade/facade');
 var connector = require('./connector/connector');
 
-connector.getdb('testdb').then(function (dbin) {
+connector.getdb('awesome')
+    .then(function (dbin) {
     facade.conf(dbin)
 
     facade.findOne('testdb', {name: "Thessaloniki3"}).then(function (data) {

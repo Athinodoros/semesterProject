@@ -7,8 +7,8 @@ var should = chai.should();
 var expect = chai.expect;
 var chaiAsPromised = require("chai-as-promised");
 var Promise = require('promise');
-var db = require('.././dbFacade/facade');
-var connector = require('../connector/connector');
+var db = require('../../dbFacade/facade');
+var connector = require('../../connector/connector');
 chai.use(chaiAsPromised);
 
 // var me = this;
@@ -40,8 +40,7 @@ describe("Test the facade on:", function () {
                 asciiname: 'Thessaloniki3',
                 loc: {type: "Point", coordinates: [22.93086, 40.64361]}
             }).then(function (data) {
-            data.insertedCount.should.equal(1)
-
+            data.insertedCount.should.equal(1);
             done();
         })
 

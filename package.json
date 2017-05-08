@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "mocha test/testImports.js"
+    "test": "mocha test --recursive",
+    "precommit": "npm test"
   },
   "dependencies": {
     "async": "^2.4.0",
@@ -22,5 +23,8 @@
     "serve-favicon": "~2.3.2",
     "sinon": "^2.2.0",
     "tunnel-ssh": "^4.1.2"
+  },
+  "devDependencies": {
+    "husky": "^0.13.3"
   }
 }
