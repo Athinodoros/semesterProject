@@ -80,12 +80,13 @@ describe("Test the facade on:", function () {
 
     });
 
-    // it('fail', function (done) {
-    //
-    //     ("not correct").should.equal('Thessaloniki3');
-    //     done();
-    //
-    // });
+
+/*    it('fail', function (done) {
+
+        ("not correct").should.equal('Thessaloniki3');
+        done();
+
+    });*/
 
 
 });
