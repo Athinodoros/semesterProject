@@ -6,7 +6,9 @@
     "start": "nodemon ./bin/www",
     "test": "mocha test --recursive",
     "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "report-coverage": "cat ./coverage/lcon.info | codecov ",
+    "check-coverage": "istanbul check-coverage --functions 80"
   },
   "dependencies": {
     "async": "^2.4.0",
@@ -27,8 +29,15 @@
     "tunnel-ssh": "^4.1.2"
   },
   "devDependencies": {
+    "codecov.io": "^0.1.6",
     "coveralls": "^2.13.1",
+    "ghooks": "^2.0.0",
     "istanbul": "^0.4.5",
     "nyc": "^10.3.2"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test:all &&  npm run check-coverage"
+    }
   }
 }

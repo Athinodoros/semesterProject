@@ -9,4 +9,7 @@ install:
 script:
   - npm test
   - npm run test:all
+  - npm run check-coverage
+after_success:
+  - npm run report-coverage
 
