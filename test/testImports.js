@@ -24,11 +24,12 @@ describe("Test the facade on:", function () {
                 db.conf(dbin);
                 done();
             });
-    })
+    });
+
     after(function (done) {
         db.close();
         done();
-    })
+    });
 
     it('import one item', function (done) {
 
@@ -44,7 +45,7 @@ describe("Test the facade on:", function () {
             done();
         })
 
-    })
+    });
 
     it('fetch one item', function (done) {
 
@@ -61,7 +62,7 @@ describe("Test the facade on:", function () {
             done();
         })
 
-    })
+    });
 
 
     it('delete one item', function (done) {
@@ -78,15 +79,8 @@ describe("Test the facade on:", function () {
             .then(done())
 
 
-    })
+    });
 
-
-    // it('should always pass', function () {
-    //     "nos".should.equal("nos");
-    // })
-    // it('should always fail', function () {
-    //     "13".should.equal(12);
-    // })
 
 })
 
