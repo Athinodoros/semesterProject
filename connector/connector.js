@@ -22,9 +22,9 @@ var os = require("os");
 else {*/
     var config = {
         username: 'root',
-        host: '45.76.95.12',
+        host: '173.199.70.98',
         port: 22,
-        password: 'Y@9gWYyw,N-5-KJD',
+        password: '{X4eLDT4Ff#V(?={',
         // dstHost: '127.0.0.1',
         dstPort: 27017,
         // localHost: '127.0.0.1',
