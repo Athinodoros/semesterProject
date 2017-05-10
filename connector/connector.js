@@ -49,44 +49,77 @@ function getdb(databaseName) {
 
     })
 }
+if(process.env.NODE_ENV == 'production') {
 
-function getNewdb(databaseName) {
-    return new Promise(function (fulfill, reject) {
+    function getNewdb(databaseName) {
+        return new Promise(function (fulfill, reject) {
 
-        tunnel(config, function (error, server) {
-            //....
-            if (server) {
-                if (!databaseName) throw new Error("the db name was not spesified");
+            tunnel(config, function (error, server) {
+                //....
+                if (server) {
+                    if (!databaseName) throw new Error("the db name was not spesified");
 
-                var connectionString = "mongodb://localhost:27000/" + databaseName;
-                console.log(connectionString)
-                MongoClient.connect(connectionString, function (err, res) {
-                    if (err) {
+                    var connectionString = "mongodb://localhost:27000/" + databaseName;
+                    console.log(connectionString)
+                    MongoClient.connect(connectionString, function (err, res) {
+                        if (err) {
 
-                        console.log("error");
-                        console.log(err);
-                        reject(err);
-                    }
+                            console.log("error");
+                            console.log(err);
+                            reject(err);
+                        }
 
-                    else {
-                        db = res;
+                        else {
+                            db = res;
 
-                        console.log('connected to MONGO DB');
-                        // callback(db);
-                        // db.open();
-                        console.log("about to return db");
-                        // console.log(db);
-                        console.log("about to return db");
-                        fulfill(db);
+                            console.log('connected to MONGO DB');
+                            // callback(db);
+                            // db.open();
+                            console.log("about to return db");
+                            // console.log(db);
+                            console.log("about to return db");
+                            fulfill(db);
 
-                    }
-                })
+                        }
+                    })
 
-            }
-        })
+                }
+            })
 
-    });
+        });
 
+    }
+}
+if(process.env.NODE_ENV == 'test'){
+    function getNewdb(databaseName){
+        return new Promise(function (fulfill, reject) {
+            if (!databaseName) throw new Error("the db name was not spesified");
+
+            var connectionString = "mongodb://localhost:27017/" + databaseName;
+            console.log(connectionString)
+            MongoClient.connect(connectionString, function (err, res) {
+                if (err) {
+
+                    console.log("error");
+                    console.log(err);
+                    reject(err);
+                }
+
+                else {
+                    db = res;
+
+                    console.log('connected to TEST MONGO DB');
+                    // callback(db);
+                    // db.open();
+                    console.log("about to return db");
+                    // console.log(db);
+                    console.log("about to return db");
+                    fulfill(db);
+
+                }
+            })
+        });
+    }
 }
 //
 // getdb(function (db) {
