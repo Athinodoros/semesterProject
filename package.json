@@ -8,7 +8,7 @@
     "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
     "precommit": "npm test && npm run test:all &&  npm run check-coverage",
     "report-coverage": "cat ./coverage/lcov.info | codecov ",
-    "check-coverage": "istanbul check-coverage --functions 70"
+    "check-coverage": "istanbul check-coverage --functions 65"
   },
   "cacheDirectories": [
     "node_modules",

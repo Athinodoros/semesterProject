@@ -2,13 +2,13 @@
  * Created by Athinodoros on 5/6/2017.
  */
 
-var chai = require("chai");
+var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
-var chaiAsPromised = require("chai-as-promised");
+var chaiAsPromised = require('chai-as-promised');
 var Promise = require('promise');
-var db = require('.././facade');
-var connector = require('.././connector');
+var db = require('../../server/dbFacade/facade');
+var connector = require('../../server/connector/connector');
 chai.use(chaiAsPromised);
 
 // var me = this;
