@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=production&& nodemon ./bin/www",
-    "test": "set NODE_ENV=test&& mocha test --recursive",
+    "start": "nodemon ./bin/www",
+    "test": "mocha test --recursive",
     "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
     "precommit": "npm test && npm run test:all &&  npm run check-coverage",
     "report-coverage": "cat ./coverage/lcov.info | codecov ",
