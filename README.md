@@ -11,6 +11,7 @@ Move into the root folder of the project, and run in the terminal:
 ..this will install all node dependencies for the project, incl. the bower tool for front end dependencies. Then run the:
 - `bower install`
 ..this will create and include in the "public/bower_components" folder all the libraries for the front end.
+- `gulp build` will create the files needed in the dist folder to successfully run the project.
 
 #
 Q1: match (b:Book)-[:mentions]->(c:City {name: "New York"}) return b.title, b.author;
