@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="awesome" ng-controller="AppCtrl">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Semester Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<!--THE PARTIAL VIEWS-->
+<div ng-view="ng-view"></div>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/components/directives.js"></script>
+    <script type="text/javascript" src="app/components/factories.js"></script>
+    <script type="text/javascript" src="app/components/filters.js"></script>
+    <script ng-include type="text/javascript" src="app/welcome/welcome.js"></script>
+</body>
+</html>
