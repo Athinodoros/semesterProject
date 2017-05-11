@@ -8,7 +8,11 @@
     'awesome.directives',
     'awesome.factories',
     'awesome.filters',
-    'awesome.welcome'
+    'awesome.welcome',
+    'awesome.query1',
+    'awesome.query2',
+    'awesome.query3',
+    'awesome.query4'
   ])
       .config(function ($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -30,6 +34,5 @@
         })
       })
       .controller('AppCtrl', function ($rootScope, $scope) {
-        $scope.bum = "Yo, hey there..";
       });
 }());
