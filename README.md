@@ -5,3 +5,5 @@
 cphbusiness semester project
 
 
+1. run in terminal `npm install`
+2. then run `bower install`
