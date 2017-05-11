@@ -32,12 +32,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 // for serving the angular application statically
-app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static(path.join(__dirname, '/public/app')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public/app')));
 
 // Catch all for sending angular application to handle refreshes doing html5 mode
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
 
 app.use('/', routes);

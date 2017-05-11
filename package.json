@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon ./server/bin/www",
     "test": "mocha test --recursive",
     "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
     "precommit": "npm test && npm run test:all &&  npm run check-coverage",

@@ -7,8 +7,8 @@ var should = chai.should();
 var expect = chai.expect;
 var chaiAsPromised = require("chai-as-promised");
 var Promise = require('promise');
-var db = require('../../dbFacade/facade');
-var connector = require('../../connector/connector');
+var db = require('.././facade');
+var connector = require('.././connector');
 chai.use(chaiAsPromised);
 
 // var me = this;
