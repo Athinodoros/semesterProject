@@ -6,7 +6,7 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 var Promise = require('promise');
 var db = require('../../server/dbFacade/facade');
-var connector = require('../../server/connector/connector');
+var connector = require('../../server/connector/db');
 chai.use(chaiAsPromised);
 var mongoose = require('mongoose');
 var testCities = require('../../testMaterial/cities.json');
