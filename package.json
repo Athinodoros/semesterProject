@@ -44,6 +44,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.3.0",
     "mongodb": "^2.2.26",
+    "mongoose": "4.9.8",
     "morgan": "~1.7.0",
     "promise": "^7.1.1",
     "run-sequence": "1.2.2",
