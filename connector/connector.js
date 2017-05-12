@@ -71,10 +71,9 @@ function getNewdb(databaseName) {
                         }
 
                         else {
+                            console.log('connected to remote MONGO DB');
                             db = res;
 
-                            console.log('connected to MONGO DB');
-                            console.log("about to return db");
                             fulfill(db);
 
                         }
@@ -104,11 +103,6 @@ function getNewdb(databaseName) {
                     db = res;
 
                     console.log('connected to TEST MONGO DB');
-                    // callback(db);
-                    // db.open();
-                    console.log("about to return db");
-                    // console.log(db);
-                    console.log("about to return db");
                     fulfill(db);
 
                 }
