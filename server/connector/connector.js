@@ -52,7 +52,7 @@ function getdb(databaseName) {
 }
 
 function getNewdb(databaseName) {
-    console.log(process.env.NODE_ENV);
+    console.log('Node Env :' ,process.env.NODE_ENV);
     if (process.env.NODE_ENV == 'production') {
         return new Promise(function (fulfill, reject) {
 

@@ -13,5 +13,7 @@ script:
 after_success:
   - npm run report-coverage
 
-env:
-- NODE_ENV=production
+#env:
+#- NODE_ENV=production
+
+services: mongodb
