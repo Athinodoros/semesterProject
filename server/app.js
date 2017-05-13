@@ -11,11 +11,11 @@ var mongoRoutes = require('./routes/mongoRoutes');
 
 var app = express();
 
-connector.getdb('testdb')//changed to this from awesome, we need to fix this!
+connector.getdb('awesome')
     .then(function (dbin) {
       facade.conf(dbin);
 
-      facade.findOne('testdb', { name: "Thessaloniki3" }).then(function (data) {
+      facade.findOne('testdb', { name: "Thessaloniki" }).then(function (data) {
         console.log("data");
         console.log(data);
         data.should.equal()

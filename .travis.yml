@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - "node"
 
+services: mongodb
+
 install:
   - npm install
 
@@ -13,7 +15,6 @@ script:
 after_success:
   - npm run report-coverage
 
-#env:
-#- NODE_ENV=production
+env:
+- NODE_ENV=test
 
-services: mongodb
