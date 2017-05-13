@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production ./server/bin/www",
-    "test": "cross-env NODE_ENV=test mocha test --recursive",
+    "test": "cross-env NODE_ENV=test gulp test:mocha",
     "dev": "cross-env NODE_ENV=test nodemon ./server/bin/www",
     "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
     "precommit": "npm test && npm run test:all &&  npm run check-coverage",

@@ -16,6 +16,9 @@ import templateCache from 'gulp-angular-templatecache';
 import babel from 'gulp-babel';
 import gls from 'gulp-live-server';
 import runSequence from 'run-sequence';
+import codecov from 'gulp-codecov';
+import istanbul from 'gulp-babel-istanbul';
+import mocha from 'gulp-mocha';
 
 gulp.task('default', ['watch']);
 
@@ -94,6 +97,32 @@ gulp.task('build', done => {
   runSequence('clean:dist',
       ['app', 'html:cache'],
       ['app.min'], done);
+});
+
+gulp.task('mocha:coverage', ['clean:coverage'], () =>{
+  return gulp.src(['server/**/*.js', '!server/dbFacade/facade.js', '!server/connector/connector.js'])
+      .pipe(istanbul())
+      .pipe(istanbul.hookRequire())
+      .pipe(gulp.dest('coverage/'));
+});
+
+gulp.task('test:codecov', () => {
+  return gulp.src('./coverage/lcov.info')
+      .pipe(plumber())
+      .pipe(codecov())
+      .pipe(plumber.stop());
+});
+
+gulp.task('test:mocha', ['mocha:env', 'mocha:coverage'], () => {
+  return gulp.src('test/**/*.js', { read: false })
+      .pipe(mocha({
+        reporter: 'spec',
+        ui: 'bdd',
+        timeout: 8000
+      }))
+      .pipe(istanbul.writeReports())
+      .once('error', () => process.exit(1))
+      .once('end', () => process.exit());
 });
 
 /*
