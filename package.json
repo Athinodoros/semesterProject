@@ -85,6 +85,7 @@
     "gulp-uglify": "1.5.3",
     "gulp-util": "3.0.7",
     "nyc": "^10.3.2",
-    "should": "8.3.1"
+    "should": "8.3.1",
+    "supertest": "3.0.0"
   }
 }

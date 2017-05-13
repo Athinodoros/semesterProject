@@ -12,12 +12,7 @@ var testBooks = require('../../testMaterial/books.json');
 var Book = require('../../server/models/book');
 
 describe('Tests for book model', function () {
-  before(function (done) {
 
-    connector.getdb('testdb').then(function (dbin) {
-      done();
-    });
-  });
 
   beforeEach(function (done) {
     Book.remove({}, function () {
@@ -28,11 +23,7 @@ describe('Tests for book model', function () {
       });
     });
   });
-  after(function (done) {
-    //mongoose.connection.db.dropDatabase();
-    mongoose.connection.close();
-    done();
-  });
+
 
   it('Should return book number one', function (done) {
     Book.findOne({ title: 'test book one' })

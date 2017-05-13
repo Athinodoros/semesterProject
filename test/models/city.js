@@ -12,13 +12,7 @@ var testCities = require('../../testMaterial/cities.json');
 var City = require('../../server/models/city');
 
 describe('Tests for City Model', function () {
-  before(function (done) {
 
-      connector.getdb('testdb').then(function (dbin) {
-
-        done();
-      });
-  });
 
   beforeEach(function (done) {
     City.remove({}, function ()
@@ -31,11 +25,7 @@ describe('Tests for City Model', function () {
     });
   });
 
-  after(function (done) {
-    //mongoose.connection.db.dropDatabase();
-    mongoose.connection.close();
-    done();
-  });
+
 
   it('Should return the city of Dubai', function (done) {
     City.findOne({ name: 'Dubai' })
