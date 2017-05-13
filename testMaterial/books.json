@@ -10,6 +10,7 @@
     ],
     "language": "Greek"
   },
+
   {
     "filename": "2.txt",
     "title": "test book two",
@@ -21,5 +22,16 @@
       "Manchester"
     ],
     "language": "English"
+  },
+  {
+    "filename": "3.txt",
+    "title": "test book three",
+    "author": "RichyDoricous",
+    "release_date": "1500 BC",
+    "cities" : [
+      "Athens",
+      "Thessaloniki"
+    ],
+    "language": "Greek"
   }
 ]

@@ -5,8 +5,7 @@ var should = chai.should();
 var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 var Promise = require('promise');
-var db = require('../../server/dbFacade/facade');
-var connector = require('../../server/connector/db');
+var connector = require('../../server/connector/connector');
 chai.use(chaiAsPromised);
 var mongoose = require('mongoose');
 var testCities = require('../../testMaterial/cities.json');
@@ -14,9 +13,9 @@ var City = require('../../server/models/city');
 
 describe('Tests for City Model', function () {
   before(function (done) {
-    if (!db.db)
+
       connector.getdb('testdb').then(function (dbin) {
-        db.conf(dbin);
+
         done();
       });
   });

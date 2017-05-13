@@ -5,12 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var facade = require('./dbFacade/facade');
-var connector = require('./connector/db');
+var connector = require('./connector/connector');
 var routes = require('./routes/index');
+var mongoRoutes = require('./routes/mongoRoutes');
 
 var app = express();
 
-connector.getdb('awesome')
+connector.getdb('testdb')//changed to this from awesome, we need to fix this!
     .then(function (dbin) {
       facade.conf(dbin);
 
@@ -40,6 +41,7 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
 
+app.use('/mongoRoutes', mongoRoutes);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
