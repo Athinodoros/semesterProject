@@ -13,6 +13,10 @@ Move into the root folder of the project, and run in the terminal:
 ..this will create and include in the "public/bower_components" folder all the libraries for the front end.
 - `gulp build` will create the files needed in the dist folder to successfully run the project.
 
+- `npm test` to put the test data into the local database for testing.
+- `npm run dev` for dev local database.
+- `npm start`  will run the remote (production) database, when we have some data!
+
 #
 Q1: match (b:Book)-[:mentions]->(c:City {name: "New York"}) return b.title, b.author;
 
