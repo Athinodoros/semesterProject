@@ -18,6 +18,8 @@ Move into the root folder of the project, and run in the terminal:
 - `npm start`  will run the remote (production) database, when we have some data!
 
 #
+
+Neo4J
 Q1: match (b:Book)-[:mentions]->(c:City {name: "New York"}) return b.title, b.author;
 
 Q2: match (b:Book {title: "Harry Potter"})-[:mentions]->(c:City) return c.name, c.geolocation;
@@ -27,3 +29,10 @@ Q3: match (b:Book {author: "John Grisham"})-[:mentions]->(c:City) return b.title
 Q4: match (b:Book)-[:mentions]->(c:City {geolocation: [1.234, 5.678]}) return b.title;
 #
 Query 4 HINT: (https://neo4j.com/blog/neo4j-spatial-part1-finding-things-close-to-other-things/)
+
+#
+
+MongoDB
+Q1: db.books.find({cities: "Athens"});
+
+Q2: 
