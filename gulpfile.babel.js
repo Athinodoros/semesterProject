@@ -14,6 +14,7 @@ import del from 'del';
 import env from 'gulp-env';
 import templateCache from 'gulp-angular-templatecache';
 import babel from 'gulp-babel';
+import copy from 'gulp-copy';
 import gls from 'gulp-live-server';
 import runSequence from 'run-sequence';
 import codecov from 'gulp-codecov';
@@ -93,12 +94,6 @@ gulp.task('dev:env', () => {
   });
 });
 
-gulp.task('build', done => {
-  runSequence('clean:dist',
-      ['app', 'html:cache'],
-      ['app.min'], done);
-});
-
 gulp.task('mocha:coverage', ['clean:coverage'], () =>{
   return gulp.src(['server/**/*.js', '!server/dbFacade/facade.js', '!server/connector/connector.js'])
       .pipe(istanbul())
@@ -125,13 +120,30 @@ gulp.task('test:mocha', ['mocha:env', 'mocha:coverage'], () => {
       .once('end', () => process.exit());
 });
 
-/*
+gulp.task('transpile', () => {
+  return gulp.src('server/**/*.js')
+      .pipe(plumber())
+      .pipe(babel())
+      .pipe(plumber.stop())
+      .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copyAssets', () => gulp.src('server/**/*.!(js)').pipe(copy('dist', { prefix: 1 })));
+
+gulp.task('build', done => {
+  runSequence('clean:dist',
+      ['app', 'html:cache'],
+      ['app.min', 'transpile', 'copyAssets'], done);
+});
+
+gulp.task('build:angular', done => runSequence('app', 'app.min', done));
+
 // should be used for development
 // is for watching for file changes, and then run the concat and minify tasks
 gulp.task('watch', ['dev:env', 'build'], () => {
-  const server = gls.new('./dist/bin/www');
+  const server = gls.new('./dist/bin/www.js');
   server.start();
-  gulp.watch('public/app/!**!/!*.js', ['build:angular']);
+  gulp.watch('public/app/**/*.js', ['build:angular']);
   gulp.watch('public/style.css', ['css.min']);
-  gulp.watch('public/!**!/!*.html', ['html:cache']);
-});*/
+  gulp.watch('public/!**/!*.html', ['html:cache']);
+});
