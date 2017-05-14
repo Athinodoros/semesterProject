@@ -20,6 +20,7 @@ Move into the root folder of the project, and run in the terminal:
 #
 
 Neo4J
+
 Q1: match (b:Book)-[:mentions]->(c:City {name: "New York"}) return b.title, b.author;
 
 Q2: match (b:Book {title: "Harry Potter"})-[:mentions]->(c:City) return c.name, c.geolocation;
@@ -33,6 +34,11 @@ Query 4 HINT: (https://neo4j.com/blog/neo4j-spatial-part1-finding-things-close-t
 #
 
 MongoDB
+
 Q1: db.books.find({cities: "Athens"});
 
-Q2: 
+Q2: db.books.find({title: "test book three"}, {_id: 0, cities: 1}); --> db.cities.find({name: "Thessaloniki3"}, {_id: 0, "loc.coordinates": 1}); --> (aggregate function the shit out of it)
+
+Q3: 
+
+Q4:
