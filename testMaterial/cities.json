@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Dubai",
+    "asciiname": "Dubai",
+    "loc": {
+      "type": "Point",
+      "coordinates": [
+        55.17128,
+        25.0657
+      ]
+    },
+    "countrycode": "AE"
+  },
+  {
+    "name": "Assis",
+    "asciiname": "Assis",
+    "loc": {
+      "type": "Point",
+      "coordinates": [
+        -50.41222,
+        -22.66167
+      ]
+    },
+    "countrycode": "BR"
+  },
+  {
+    "name": "Thessaloniki3",
+    "asciiname": "Thessaloniki3",
+    "loc": {
+      "type": "Point",
+      "coordinates": [
+        22.93086,
+        40.64361
+      ]
+    },
+    "countrycode": "GR"
+  }
+]

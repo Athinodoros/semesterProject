@@ -4,6 +4,7 @@
 
 var MongoClient = require('mongodb').MongoClient;
 var Server = require('mongodb').Server;
+var mongoose = require('mongoose');
 var tunnel = require('tunnel-ssh');
 var os = require("os");
 /*if (os.type() == 'Linux') {
@@ -51,7 +52,7 @@ function getdb(databaseName) {
 }
 
 function getNewdb(databaseName) {
-    console.log(process.env.NODE_ENV);
+    console.log('Node Env :' ,process.env.NODE_ENV);
     if (process.env.NODE_ENV == 'production') {
         return new Promise(function (fulfill, reject) {
 
@@ -62,7 +63,7 @@ function getNewdb(databaseName) {
 
                     var connectionString = "mongodb://localhost:27000/" + databaseName;
                     console.log(connectionString)
-                    MongoClient.connect(connectionString, function (err, res) {
+                    mongoose.connect(connectionString, function (err, res) {
                         if (err) {
 
                             console.log("error");
@@ -91,7 +92,7 @@ function getNewdb(databaseName) {
 
             var connectionString = "mongodb://localhost:27017/" + databaseName;
             console.log(connectionString)
-            MongoClient.connect(connectionString, function (err, res) {
+            mongoose.connect(connectionString, function (err, res) {
                 if (err) {
 
                     console.log("error");

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var facade = require('./dbFacade/facade');
 var connector = require('./connector/connector');
 var routes = require('./routes/index');
+var mongoRoutes = require('./routes/mongoRoutes');
 
 var app = express();
 
@@ -14,7 +15,7 @@ connector.getdb('awesome')
     .then(function (dbin) {
       facade.conf(dbin);
 
-      facade.findOne('testdb', { name: "Thessaloniki3" }).then(function (data) {
+      facade.findOne('testdb', { name: "Thessaloniki" }).then(function (data) {
         console.log("data");
         console.log(data);
         data.should.equal()
@@ -40,6 +41,7 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
 
+app.use('/mongoRoutes', mongoRoutes);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
