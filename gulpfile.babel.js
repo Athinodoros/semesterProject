@@ -146,4 +146,6 @@ gulp.task('watch', ['dev:env', 'build'], () => {
   gulp.watch('public/app/**/*.js', ['build:angular']);
   gulp.watch('public/style.css', ['css.min']);
   gulp.watch('public/!**/!*.html', ['html:cache']);
+  gulp.watch('server/**/*.!(js)', ['copyAssets'], server.start.bind(server));
+  gulp.watch('server/**/*.js', ['transpile', server.start.bind(server)]);
 });
