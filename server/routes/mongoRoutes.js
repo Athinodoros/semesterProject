@@ -9,7 +9,7 @@ router.post('/byCity', function(req, res) {
   var city = req.body.city;
   Book.find({
     cities: city
-  }, function(err, data) {
+  },{_id: 0, title: 1, author: 1}, function(err, data) {
     if(err)throw err;
     console.log('Data: ', data);
     res.send(data);
