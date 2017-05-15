@@ -10,5 +10,12 @@
       })
       .controller('query1Ctrl', function ($scope, api, $http) {
 
+        $scope.searchCity = () => {
+          api.getBooksByCity($scope.city)
+              .then(data => {
+                $scope.books = data.data.books;
+                console.log($scope.books);
+              });
+        };
       });
 }());

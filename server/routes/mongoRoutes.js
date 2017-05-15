@@ -1,19 +1,36 @@
 'use strict';
-var express = require('express');
-var router = express.Router();
-var Book = require('../models/book');
-var City = require('../models/city');
 
+import express from 'express';
+const Book = require('../models/book');
+const City = require('../models/city');
+const router = express.Router();
 
-router.post('/byCity', function(req, res) {
-  var city = req.body.city;
+/**
+ * @api {get} /books/:city Finds all books (titles and authors) based on a city name
+ * @apiName getBooksByCity
+ * @apiGroup MongoDB
+ *
+ * @apiDescription Used whenever a user want to get all books that mentions a given city name
+ * @apiParam {String} The city's name
+ *
+ * @apiSuccess {Array} An array of books containing title and author
+ * @apiSuccess (Success 200) OK
+ */
+router.get('/:city', (req, res) => {
+  const city = req.params.city;
   Book.find({
     cities: city
-  }, function(err, data) {
-    if(err)throw err;
-    console.log('Data: ', data);
-    res.send(data);
-  });
+  }, {_id: 0, title: 1, author: 1}, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).ngJSON({ message: 'Internal server error' });
+    } else if (!data) {
+      res.status(204).end();
+    } else {
+      res.status(200).ngJSON({ books: data });
+    }
 
+  });
 });
-module.exports = router;
+
+export default router;

@@ -3,13 +3,14 @@
 
   var app = angular.module('awesome.factories', ['ngRoute']);
 
-  app.factory('api', function ($http) {
-    function getBookById(id) {
-      return $http.get('/api/books/' + id);
+  app.factory('api', ($http) => {
+
+    function getBooksByCity(city) {
+      return $http.get('/api/books/' + city);
     }
 
     return {
-      getBookById: getBookById
+      getBooksByCity: getBooksByCity
     };
   });
 }());

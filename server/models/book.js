@@ -1,10 +1,10 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-var BookSchema = new Schema({
-  filename :{
+const BookSchema = new Schema({
+  filename: {
     type: String,
     required: false
   },
@@ -30,6 +30,6 @@ var BookSchema = new Schema({
   }
 });
 
-var Book = mongoose.model('Book', BookSchema);
+const Book = mongoose.model('Book', BookSchema);
 
 module.exports = Book;
