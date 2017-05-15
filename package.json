@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production ./server/bin/www",
     "test": "cross-env NODE_ENV=test gulp test:mocha",
-    "dev": "cross-env NODE_ENV=test nodemon ./server/bin/www"
+    "dev": "cross-env NODE_ENV=test nodemon ./server/bin/www",
+    "precommit": "gulp test:mocha"
   },
   "cacheDirectories": [
     "node_modules",

@@ -5,6 +5,11 @@ node_js:
 
 services: mongodb
 
+before install:
+  - npm install -g npm@3.9.3
+  - npm install -g gulp
+  - npm install -g bower
+
 install:
   - npm install
 
