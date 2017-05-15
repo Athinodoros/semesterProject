@@ -6,10 +6,7 @@
     "start": "cross-env NODE_ENV=production ./server/bin/www",
     "test": "cross-env NODE_ENV=test gulp test:mocha",
     "dev": "cross-env NODE_ENV=test nodemon ./server/bin/www",
-    "test:all": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec test --recursive ",
-    "precommit": "npm test && npm run test:all &&  npm run check-coverage",
-    "report-coverage": "cat ./coverage/lcov.info | codecov ",
-    "check-coverage": "istanbul check-coverage --functions 20"
+    "precommit": "gulp test:mocha"
   },
   "cacheDirectories": [
     "node_modules",

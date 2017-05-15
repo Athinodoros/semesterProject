@@ -35,7 +35,7 @@ Query 4 HINT: (https://neo4j.com/blog/neo4j-spatial-part1-finding-things-close-t
 
 MongoDB
 
-Q1: db.books.find({cities: "Athens"});
+Q1: db.books.find({cities: "Athens"},{_id: 0, title: 1, author: 1});
 
 Q2: db.books.find({title: "test book three"}, {_id: 0, cities: 1}); --> db.cities.find({name: "Thessaloniki3"}, {_id: 0, "loc.coordinates": 1}); --> (aggregate function the shit out of it)
 
