@@ -35,18 +35,14 @@ describe('MongoDB Routes', function() {
   });
 
   it('should return two books when Athens is entered', function(done) {
-    var city = {
-      city: 'Athens'
-    };
+    var city = 'Athens';
     request
-      .post('/mongoRoutes/byCity')
-      .send(city)
-      .end((err, res) => {
-        console.log(res.body.length);
-        res.body.length.should.equal(2);
-        res.body[0].title.should.equal('test book one');
-        res.body[1].title.should.equal('test book three');
-        done(err);
-      });
+        .get(`/api/books/${city}`)
+        .send({})
+        .expect(200)
+        .end((err, res) => {
+          res.body.books.length.should.equal(2);
+          done(err);
+        });
   });
 });

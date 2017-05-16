@@ -81,20 +81,20 @@ gulp.task('html:cache', () => {
 gulp.task('mocha:env', () => {
   env({
     vars: {
-      NODE_ENV: 'test'
-    }
+      NODE_ENV: 'test',
+    },
   });
 });
 
 gulp.task('dev:env', () => {
   env({
     vars: {
-      NODE_ENV: 'development'
-    }
+      NODE_ENV: 'development',
+    },
   });
 });
 
-gulp.task('mocha:coverage', ['clean:coverage'], () =>{
+gulp.task('mocha:coverage', ['clean:coverage'], () => {
   return gulp.src(['server/**/*.js', '!server/dbFacade/facade.js', '!server/connector/connector.js'])
       .pipe(istanbul())
       .pipe(istanbul.hookRequire())
@@ -113,9 +113,10 @@ gulp.task('test:mocha', ['mocha:env', 'mocha:coverage'], () => {
       .pipe(mocha({
         reporter: 'spec',
         ui: 'bdd',
-        timeout: 8000
+        timeout: 4000,
       }))
       .pipe(istanbul.writeReports())
+      .pipe(istanbul.enforceThresholds({thresholds:{ functions: 50 } }))
       .once('error', () => process.exit(1))
       .once('end', () => process.exit());
 });
