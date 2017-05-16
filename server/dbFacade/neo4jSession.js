@@ -10,7 +10,7 @@ const session = driver.getDriver();
 function insertBook() {
     const title = 'Seven Hells';
     const author = 'Nos';
-    const cities = ['Riga', 'Copenhagen', 'Hood']
+    const cities = ['Athens', 'London']
     const resultPromise = session.run(
         'CREATE (a: Book {title: $title, author: $author, cities: $cities}) RETURN a',
         {title: title, author:author, cities: cities}
@@ -25,7 +25,17 @@ function insertBook() {
     });
 }
 
+function dropNeo4j() {
+    session.run(
+        'MATCH (n) DELETE n'
+    ).then( result => {
+        session.close();
+        console.log(result);
+    })
+}
+
 module.exports = {
-    insertBook: insertBook
+    insertBook: insertBook,
+    dropNeo4j: dropNeo4j
 
 }
