@@ -14,7 +14,7 @@ import * as neo4jSession from './dbFacade/neo4jSession';
 // import routes from './routes/index';
 import mongoRoutes from './routes/mongoRoutes';
 
-neo4jSession.insertBook();
+//neo4jSession.insertBook();
 //neo4jSession.dropNeo4j();
 const app = express();
 
