@@ -35,4 +35,38 @@ router.get('/books/:city', (req, res) => {
   });
 });
 
+/**
+ * @api {get} /books/:book Finds all books (titles and authors) based on a city name
+ * @apiName getBooksByTitle
+ * @apiGroup MongoDB
+ *
+ * @apiDescription Used whenever a user wants to find all the cities mentioned by a book
+ * @apiParam {String} The books title
+ *
+ * @apiSuccess {Array} An array of cities containing the latitude and longitude
+ * @apiSuccess (Success 200) OK
+ */
+router.get('/title/:book', (req, res) => {
+  const book = req.params.book;
+  console.log('title', book);
+  Book.find({
+    title: book,
+  }, { _id: 0,cities: 1 }, (err, result) => {
+    console.log('Result :' , result[0].cities);
+    var returnedCities = result[0].cities;
+    City.find({ name:  { $in : returnedCities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }, (err, data) => {
+     if(err) {
+       console.error(err);
+       res.status(500).ngJSON({ message: 'Internal server error' });
+     } else if(!data) {
+       res.status(204).end();
+     } else if (data.length == 0) {
+       res.status(404).ngJSON({ message: 'The title was invalid or missing.' });
+     }else {
+       res.status(200).ngJSON({ cities: data });
+     }
+    });
+  });
+});
+
 export default router;

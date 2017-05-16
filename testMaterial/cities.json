@@ -34,5 +34,17 @@
       ]
     },
     "countrycode": "GR"
+  },
+  {
+    "name": "Thessaloniki",
+    "asciiname": "Thessaloniki",
+    "loc": {
+      "type": "Point",
+      "coordinates": [
+        22.93086,
+        40.64361
+      ]
+    },
+    "countrycode": "GR"
   }
 ]

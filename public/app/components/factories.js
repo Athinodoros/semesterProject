@@ -8,9 +8,13 @@
     function getBooksByCity(city) {
       return $http.get(`/api/mongo/books/${city}`);
     }
+    function getCitiesByBook(book) {
+      return $http.get('/api/books/title/' + book);
+    }
 
     return {
-      getBooksByCity: getBooksByCity
+      getBooksByCity: getBooksByCity,
+      getCitiesByBook: getCitiesByBook
     };
   });
 }());
