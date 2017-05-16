@@ -3,12 +3,6 @@ language: node_js
 node_js:
   - "node"
 
-dist: trusty
-
-services:
-  -mongodb
-  -neo4j
-
 before_install:
   - npm install -g npm@3.9.3
   - npm install -g gulp
@@ -25,4 +19,6 @@ after_success:
 
 env:
 - NODE_ENV=test
+- DB=mongodb
+- DB=neo4j
 
