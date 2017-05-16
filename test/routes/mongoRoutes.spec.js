@@ -72,7 +72,7 @@ describe('MongoDB Routes', function () {
           done(err);
         });
   });
-  it.only('should return 404 if a number is entered', function(done) {
+  it('should return 404 if a number is entered', function(done) {
     var city = 12345;
     request
         .get(`/api/books/${city}`)
