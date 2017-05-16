@@ -19,13 +19,15 @@ const router = express.Router();
 router.get('/:city', (req, res) => {
   const city = req.params.city;
   Book.find({
-    cities: city
-  }, {_id: 0, title: 1, author: 1}, (err, data) => {
+    cities: city,
+  }, { _id: 0, title: 1, author: 1 }, (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).ngJSON({ message: 'Internal server error' });
-    } else if (!data) {
+    }else if (!data) {
       res.status(204).end();
+    }else if (data.length == 0) {
+      res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
     } else {
       res.status(200).ngJSON({ books: data });
     }
