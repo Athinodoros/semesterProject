@@ -1,20 +1,4 @@
-
 'use strict';
-
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var facade = require('./dbFacade/facade');
-var connector = require('./connector/connector');
-var routes = require('./routes/index');
-var mongoRoutes = require('./routes/mongoRoutes');
-const neo4jDriver = require('./connector/neo4j');
-const neo4jSession = require('./dbFacade/neo4jSession');
-
-neo4jSession.insertBook();
 
 import express from 'express';
 import path from 'path';
@@ -25,10 +9,12 @@ import bodyParser from 'body-parser';
 import './modules/ngJSON';
 import * as facade from './dbFacade/facade';
 import * as connector from './connector/connector';
-
+import * as neo4jDriver from './connector/neo4j';
+import * as neo4jSession from './dbFacade/neo4jSession';
 // import routes from './routes/index';
 import mongoRoutes from './routes/mongoRoutes';
 
+neo4jSession.insertBook();
 const app = express();
 
 connector.getdb('awesome')
