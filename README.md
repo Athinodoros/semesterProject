@@ -16,6 +16,7 @@ Move into the root folder of the project, and run in the terminal:
 - `npm test` to put the test data into the local database for testing.(make sure you have mongodb running!)
 - `npm run dev` for dev local database.
 - `npm start`  will run the remote (production) database, when we have some data!
+- `git cz ` for commiting with comittizen
 
 #
 
