@@ -8,6 +8,10 @@ var facade = require('./dbFacade/facade');
 var connector = require('./connector/connector');
 var routes = require('./routes/index');
 var mongoRoutes = require('./routes/mongoRoutes');
+const neo4jDriver = require('./connector/neo4j');
+const neo4jSession = require('./dbFacade/neo4jSession');
+
+neo4jSession.insertBook();
 
 var app = express();
 
