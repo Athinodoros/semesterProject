@@ -5,15 +5,19 @@ node_js:
 
 services: mongodb
 
+before_install:
+  - npm install -g npm@3.9.3
+  - npm install -g gulp
+  - npm install -g bower
+
 install:
   - npm install
 
 script:
   - npm test
-  - npm run test:all
-  - npm run check-coverage
+
 after_success:
-  - npm run report-coverage
+   - gulp test:codecov
 
 env:
 - NODE_ENV=test
