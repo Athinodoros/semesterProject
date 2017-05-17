@@ -92,8 +92,32 @@ describe('MongoDB Routes Q1', function () {
   });
 
   describe('Query 2', () => {
-    it('should return ......', done => {
-    done();
+    it('should return something when test book three is entered', function (done) {
+      var book = 'test book three';
+      request
+          .get(`/api/mongo/title/${book}`)
+          .send({})
+          .expect(200)
+          .end((err, res) => {
+            const cityName = res.body.cities[0].name;
+            cityName.should.equal('Thessaloniki');
+            done(err);
+          });
+    });
+  });
+  describe('Query 3', () => {
+    it('should return books and cities relating to author ben', (done) =>  {
+      var author = 'Athinodoros';
+      var mapped = [];
+      request
+          .get(`/api/mongo/author/${author}`)
+          .send({})
+          .end((err, res) => {
+            var response = res.body;
+            res.body.titles.length.should.equal(2);
+            res.body.cities[0][0].name.should.equal('Copenhagen');
+            done(err);
+          });
     });
   });
 });

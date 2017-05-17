@@ -9,10 +9,10 @@
       return $http.get(`/api/mongo/books/${city}`);
     }
     function getCitiesByBook(book) {
-      return $http.get('/api/books/title/' + book);
+      return $http.get('/api/mongo/title/' + book);
     }
     function getBooksByAuthor(author) {
-      return $http.get('/api/books/author/test/' + author);
+      return $http.get('/api/mongo/author/' + author);
     }
 
     return {

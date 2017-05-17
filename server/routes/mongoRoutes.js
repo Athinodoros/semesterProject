@@ -67,7 +67,18 @@ router.get('/title/:book', (req, res) => {
   });
 });
 
-router.get('/author/test/:author', (req, res) => {
+/**
+ * @api {get} /author/:author Finds all books and cities  based on an author name
+ * @apiName getBooksAndCities
+ * @apiGroup MongoDB
+ *
+ * @apiDescription Used whenever a user wants to find all the books and cities mentiones by an auhtor
+ * @apiParam {String} The authors name
+ *
+ * @apiSuccess {Array} An array of book titles and city names and coordinates
+ * @apiSuccess (Success 200) OK
+ */
+router.get('/author/:author', (req, res) => {
   const author = req.params.author;
   var cities = [];
   var titles = [];
@@ -88,7 +99,7 @@ router.get('/author/test/:author', (req, res) => {
         console.log(err);
       } else {
         citiesWithLoc.push(data);
-        res.ngJSON({ titles: titles, cities: citiesWithLoc });
+        res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
       }
 
     });
