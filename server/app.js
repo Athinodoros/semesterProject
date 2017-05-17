@@ -16,6 +16,7 @@ import mongoRoutes from './routes/mongoRoutes';
 
 //neo4jSession.insertBook();
 //neo4jSession.dropNeo4j();
+neo4jSession.getBookTitleByCityName("London");
 const app = express();
 
 connector.getdb('awesome')

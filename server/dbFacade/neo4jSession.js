@@ -6,6 +6,19 @@ const driver = require('../connector/neo4j');
 
 const session = driver.getDriver();
 
+function getBookTitleByCityName(cityName) {
+    const resultPromise = session.run (
+        'MATCH (b: Book)-[:MENTIONS]->(c:City {name: $cityName}) RETURN b.title, b.author',
+        {cityName: cityName}
+    );
+    resultPromise.then(result => {
+        session.close();
+        const singleRecord = result.records[0];
+        const node = singleRecord.get(0);
+        console.log(node);
+    })
+}
+
 // just testing
 function insertBook() {
     const title = 'Seven Hells';
@@ -36,6 +49,6 @@ function dropNeo4j() {
 
 module.exports = {
     insertBook: insertBook,
-    dropNeo4j: dropNeo4j
-
+    dropNeo4j: dropNeo4j,
+    getBookTitleByCityName: getBookTitleByCityName
 }
