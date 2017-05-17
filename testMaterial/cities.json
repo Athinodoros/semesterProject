@@ -46,5 +46,17 @@
       ]
     },
     "countrycode": "GR"
+  },
+  {
+    "name": "Copenhagen",
+    "asciiname": "Copenhagen",
+    "loc": {
+      "type": "Point",
+      "coordinates": [
+        22.93086,
+        40.64361
+      ]
+    },
+    "countrycode": "DK"
   }
 ]

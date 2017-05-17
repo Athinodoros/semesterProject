@@ -47,4 +47,17 @@ describe('Mongo Routes Q2', function () {
           done(err);
         });
   });
+  it('should return books and cities relating to author ben', (done) =>  {
+    var author = 'Athinodoros';
+    var mapped = [];
+    request
+        .get(`/api/books/author/test/${author}`)
+        .send({})
+        .end((err, res) => {
+         var response = res.body;
+          res.body.titles.length.should.equal(2);
+          res.body.cities[0][0].name.should.equal('Copenhagen');
+          done(err);
+        });
+  });
 });

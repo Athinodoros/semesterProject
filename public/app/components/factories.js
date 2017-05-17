@@ -11,10 +11,14 @@
     function getCitiesByBook(book) {
       return $http.get('/api/books/title/' + book);
     }
+    function getBooksByAuthor(author) {
+      return $http.get('/api/books/author/test/' + author);
+    }
 
     return {
       getBooksByCity: getBooksByCity,
-      getCitiesByBook: getCitiesByBook
+      getCitiesByBook: getCitiesByBook,
+      getBooksByAuthor: getBooksByAuthor
     };
   });
 }());
