@@ -16,7 +16,7 @@ const router = express.Router();
  * @apiSuccess {Array} An array of books containing title and author
  * @apiSuccess (Success 200) OK
  */
-router.get('/:city', (req, res) => {
+router.get('/books/:city', (req, res) => {
   const city = req.params.city;
   Book.find({
     cities: city,

@@ -16,72 +16,76 @@ var Book = require('../../server/models/book');
 
 var request = require('supertest')(app);
 
-describe('MongoDB Routes', function () {
+describe('MongoDB Routes', () => {
 
-  beforeEach(function (done) {
-    Book.remove({}, function () {
-      var insertBooks = testBooks;
-      Book.create(insertBooks, function (err) {
-        console.log('Books saved');
+  beforeEach(done => {
+    Book.remove({}, () => {
+      const insertBooks = testBooks;
+      Book.create(insertBooks, err => {
+        // console.log('Books saved');
       });
     });
 
-    City.remove({}, function () {
-      var insertCities = testCities;
-      City.create(insertCities, function (err) {
-        console.log('Cities saved');
+    City.remove({}, () => {
+      const insertCities = testCities;
+      City.create(insertCities, err => {
+        // console.log('Cities saved');
       });
     });
 
     done();
   });
 
-  it('should return two books when Athens is entered', function (done) {
-    var city = 'Athens';
-    request
-        .get(`/api/books/${city}`)
-        .send({})
-        .expect(200)
-        .end((err, res) => {
-          res.body.books.length.should.equal(2);
-          done(err);
-        });
-  });
+  describe('Query 1', () => {
+    it('should return two books when Athens is entered', done => {
+      const city = 'Athens';
+      request
+          .get(`/api/mongo/books/${city}`)
+          .send({})
+          .expect(200)
+          .end((err, res) => {
+            res.body.books.length.should.equal(2);
+            done(err);
+          });
+    });
 
-  it('should return 204 no data when city Bum Land is entered', function (done) {
-    var city = 'Bum Land';
-    request
-        .get(`/api/books/${city}`)
-        .send({})
-        .expect(404)
-        .end((err, res) => {
-          const error = JSON.parse(res.error.text);
-          error.message.should.equal('The city was invalid or missing.');
-          done(err);
-        });
-  });
-  it('should return 404 when no city is entered', function(done) {
-    var city = undefined;
-    request
-        .get(`/api/books/${city}`)
-        .send({})
-        .expect(404)
-        .end((err, res) => {
-          const error = JSON.parse(res.error.text);
-          error.message.should.equal('The city was invalid or missing.');
-          done(err);
-        });
-  });
-  it('should return 404 if a number is entered', function(done) {
-    var city = 12345;
-    request
-        .get(`/api/books/${city}`)
-        .send({})
-        .expect(404)
-        .end((err, res) => {
-          const error = JSON.parse(res.error.text);
-          error.message.should.equal('The city was invalid or missing.');
-          done(err);
-        });
+    it('should return 204 no data when city Bum Land is entered', done => {
+      const city = 'Bum Land';
+      request
+          .get(`/api/mongo/books/${city}`)
+          .send({})
+          .expect(404)
+          .end((err, res) => {
+            const error = JSON.parse(res.error.text);
+            error.message.should.equal('The city was invalid or missing.');
+            done(err);
+          });
+    });
+
+    it('should return 404 when no city is entered', done => {
+      const city = undefined;
+      request
+          .get(`/api/mongo/books/${city}`)
+          .send({})
+          .expect(404)
+          .end((err, res) => {
+            const error = JSON.parse(res.error.text);
+            error.message.should.equal('The city was invalid or missing.');
+            done(err);
+          });
+    });
+
+    it('should return 404 if a number is entered', done => {
+      const city = 12345;
+      request
+          .get(`/api/mongo/books/${city}`)
+          .send({})
+          .expect(404)
+          .end((err, res) => {
+            const error = JSON.parse(res.error.text);
+            error.message.should.equal('The city was invalid or missing.');
+            done(err);
+          });
+    });
   });
 });

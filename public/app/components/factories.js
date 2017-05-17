@@ -6,7 +6,7 @@
   app.factory('api', ($http) => {
 
     function getBooksByCity(city) {
-      return $http.get('/api/books/' + city);
+      return $http.get(`/api/mongo/books/${city}`);
     }
 
     return {
