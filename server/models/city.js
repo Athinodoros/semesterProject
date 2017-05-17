@@ -15,8 +15,8 @@ var CitySchema = new Schema({
     unique: true
   },
   loc: {
-    type: { type: String },
-    coordinates: [Number]
+    type: [Number],
+    index: '2d'
   },
   countrycode: {
     type: String,

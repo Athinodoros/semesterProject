@@ -8,9 +8,21 @@
     function getBooksByCity(city) {
       return $http.get(`/api/mongo/books/${city}`);
     }
+    function getCitiesByBook(book) {
+      return $http.get(`/api/mongo/title/${book}`);
+    }
+    function getBooksByAuthor(author) {
+      return $http.get(`/api/mongo/author/${author}`);
+    }
+    function getBooksCloseTo(location, distance) {
+      return $http.get(`/api/mongo/geolocate/${location}/${distance}`);
+    }
 
     return {
-      getBooksByCity: getBooksByCity
+      getBooksByCity: getBooksByCity,
+      getCitiesByBook: getCitiesByBook,
+      getBooksByAuthor: getBooksByAuthor,
+      getBooksCloseTo: getBooksCloseTo
     };
   });
 }());

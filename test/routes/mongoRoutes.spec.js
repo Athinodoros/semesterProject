@@ -16,7 +16,9 @@ var Book = require('../../server/models/book');
 
 var request = require('supertest')(app);
 
-describe('MongoDB Routes', () => {
+
+describe('MongoDB Routes Q1', function () {
+
 
   beforeEach(done => {
     Book.remove({}, () => {
@@ -90,8 +92,46 @@ describe('MongoDB Routes', () => {
   });
 
   describe('Query 2', () => {
-    it('should return ......', done => {
-    done();
+    it('should return something when test book three is entered', function (done) {
+      var book = 'test book three';
+      request
+          .get(`/api/mongo/title/${book}`)
+          .send({})
+          .expect(200)
+          .end((err, res) => {
+            const cityName = res.body.cities[0].name;
+            cityName.should.equal('Thessaloniki');
+            done(err);
+          });
     });
   });
+  describe('Query 3', () => {
+    it('should return books and cities relating to author ben', (done) =>  {
+      var author = 'Athinodoros';
+      var mapped = [];
+      request
+          .get(`/api/mongo/author/${author}`)
+          .send({})
+          .end((err, res) => {
+            var response = res.body;
+            res.body.titles.length.should.equal(2);
+            res.body.cities[0][0].name.should.equal('Copenhagen');
+            done(err);
+          });
+    });
+  });
+  /*describe('Query 4', () => {
+    it('should do something when given some coords', (done) => {
+      var coords = [22.93086, 40.64361];
+      var maxDistance = 1000000;
+      request
+        .get(`/api/mongo//geolocate/${coords}/${maxDistance}`)
+          .send({})
+          .end((err, res) => {
+            var response = res.body;
+            console.log(res.body);
+            done(err);
+          });
+    });
+  });*/
 });
