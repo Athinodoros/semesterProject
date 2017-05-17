@@ -12,6 +12,7 @@ import * as connector from './connector/connector';
 
 // import routes from './routes/index';
 import mongoRoutes from './routes/mongoRoutes';
+import neo4jRoutes from './routes/neo4jRoutes';
 
 const app = express();
 
@@ -42,7 +43,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../public/app')));
 
 // app.use('/', routes);
-app.use('/api/books', mongoRoutes);
+app.use('/api/mongo', mongoRoutes);
+app.use('/api/neo4j', neo4jRoutes);
 
 // Catch all for sending angular application to handle refreshes doing html5 mode
 app.get('/*', (req, res) => {
