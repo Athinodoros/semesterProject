@@ -48,11 +48,9 @@ router.get('/books/:city', (req, res) => {
  */
 router.get('/title/:book', (req, res) => {
   const book = req.params.book;
-  console.log('title', book);
   Book.find({
     title: book,
   }, { _id: 0, cities: 1 }, (err, result) => {
-    console.log('Result :', result[0].cities);
     var returnedCities = result[0].cities;
     City.find({ name:  { $in: returnedCities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }, (err, data) => {
       if (err) {
