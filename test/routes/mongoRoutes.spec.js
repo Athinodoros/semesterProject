@@ -120,4 +120,18 @@ describe('MongoDB Routes Q1', function () {
           });
     });
   });
+  /*describe('Query 4', () => {
+    it('should do something when given some coords', (done) => {
+      var coords = [22.93086, 40.64361];
+      var maxDistance = 1000000;
+      request
+        .get(`/api/mongo//geolocate/${coords}/${maxDistance}`)
+          .send({})
+          .end((err, res) => {
+            var response = res.body;
+            console.log(res.body);
+            done(err);
+          });
+    });
+  });*/
 });

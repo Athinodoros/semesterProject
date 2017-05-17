@@ -18,13 +18,12 @@ const router = express.Router();
  */
 router.get('/books/:city', (req, res) => {
   const city = req.params.city;
-  Book.find({
-    cities: city,
-  }, { _id: 0, title: 1, author: 1 }, (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).ngJSON({ message: 'Internal server error' });
-    }else if (!data) {
+  let query = Book.find({
+    cities: city
+  }, { _id: 0, title: 1, author: 1 }).exec();
+
+  query.then(data => {
+     if (!data) {
       res.status(204).end();
     }else if (data.length == 0) {
       res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
@@ -32,6 +31,8 @@ router.get('/books/:city', (req, res) => {
       res.status(200).ngJSON({ books: data });
     }
 
+  }).catch(reason => {
+    console.error(reason);
   });
 });
 
@@ -48,15 +49,14 @@ router.get('/books/:city', (req, res) => {
  */
 router.get('/title/:book', (req, res) => {
   const book = req.params.book;
-  Book.find({
-    title: book,
-  }, { _id: 0, cities: 1 }, (err, result) => {
+  let query = Book.find({
+        title: book
+      }, { _id: 0, cities: 1 }).exec();
+  query.then(result => {
     var returnedCities = result[0].cities;
-    City.find({ name:  { $in: returnedCities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }, (err, data) => {
-      if (err) {
-        console.error(err);
-        res.status(500).ngJSON({ message: 'Internal server error' });
-      } else if (!data) {
+    let query1 = City.find({ name:  { $in: returnedCities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
+    query1.then(data => {
+       if (!data) {
         res.status(204).end();
       } else if (data.length == 0) {
         res.status(404).ngJSON({ message: 'The title was invalid or missing.' });
@@ -64,6 +64,8 @@ router.get('/title/:book', (req, res) => {
         res.status(200).ngJSON({ cities: data });
       }
     });
+  }).catch(reason => {
+    console.error(reason);
   });
 });
 
@@ -83,27 +85,45 @@ router.get('/author/:author', (req, res) => {
   var cities = [];
   var titles = [];
   var citiesWithLoc = [];
-  Book.find({
-    author: author,
-  }, { _id: 0, title: 1, cities: 1 }, (err, data) => {
-    var returned = data;
+  let query = Book.find({ author: author }, { _id: 0, title: 1, cities: 1 }).exec();
+  query.then(data => {
     data.forEach(book => {
       cities = cities.concat(book.cities);
       titles = titles.concat(book.title);
     });
-    City.find({
-      name:  { $in: cities }
-    }, { _id: 0, name: 1, loc: 1, countrycode: 1 }, (err, data) => {
-
-      if (err) {
-        console.log(err);
-      } else {
+    let query1 = City.find({ name:  { $in: cities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
+    query1.then(data => {
         citiesWithLoc.push(data);
         res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
-      }
-
+      }).catch(reason => {
+        console.error(reason)
     });
   });
 });
+
+/*router.get('/geolocate/:coords/:maxDistance', (req, res) => {
+  var coords = req.params.coords;
+  console.log('COORDS: ', coords);
+  var maxDistance = req.params.maxDistance;
+  var cities = [];
+  City.find({
+  loc: { $nearSphere: coords } }, { _id: 0, name: 1 }, (err, result) => {
+    console.log('RESULT :', result);
+     result.forEach(city => {
+       cities = cities.concat(city);
+       console.log(cities.length);
+     });
+      Book.find({
+        cities: { $in: cities } }, { _id: 0, title: 1, author: 1 }, (err, result) => {
+        if (err) {
+          console.error(err);
+        } else {
+          res.status(200).ngJSON({ books: result });
+        }
+
+      });
+
+    });
+});*/
 
 export default router;
