@@ -88,4 +88,10 @@ describe('MongoDB Routes', () => {
           });
     });
   });
+
+  describe('Query 2', () => {
+    it('should return ......', done => {
+    done();
+    });
+  });
 });
