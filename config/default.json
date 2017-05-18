@@ -1,5 +1,4 @@
 {
-  // Customer module configs
   "Customer": {
     "neo4jConfig": {
       "username": "neo4j",
