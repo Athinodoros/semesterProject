@@ -6,7 +6,7 @@
 .project
 .metadata
 
-
+config/*
 node_modules
 .idea
 coverage
