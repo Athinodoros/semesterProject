@@ -6,7 +6,9 @@ const config = require('config');
 const nConfig = config.get('Customer.neo4jConfig');
 
 //create a driver instance for the user neo4j
+
 const driver = neo4j.driver("bolt://localhost", neo4j.auth.basic(nConfig.get("username"), nConfig.get("password")));
+
 
 //Register a callback to know if driver creation was successful
 driver.onCompleted = () => {

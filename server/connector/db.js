@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Promise = require('promise');
 var tunnel = require('tunnel-ssh');
 var os = require('os');
+mongoose.Promise = global.Promise;
 
 console.log(process.platform);
 console.log(os.type());
