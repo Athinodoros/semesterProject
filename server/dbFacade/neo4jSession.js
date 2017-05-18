@@ -4,6 +4,7 @@
 
 const driver = require('../connector/neo4j');
 const Book = require('../models/neo4jBook');
+const City = require('../models/neo4jCity');
 
 const session = driver.getDriver();
 
@@ -15,7 +16,6 @@ function getBookTitleByCityName(cityName) {
     resultPromise.then(result => {
 
         const books = result.records.map(r => new Book(r.get('book')));
-        console.log(books);
         return books;
         session.close();
     })
@@ -24,24 +24,21 @@ function getBookTitleByCityName(cityName) {
         });
 };
 
-// just testing
-function insertBook() {
-    const title = 'Seven Hells';
-    const author = 'Nos';
-    const cities = ['Athens', 'London']
+function getCitiesByBookTitle(bookTitle) {
     const resultPromise = session.run(
-        'CREATE (a: Book {title: $title, author: $author, cities: $cities}) RETURN a',
-        {title: title, author: author, cities: cities}
+        'MATCH (book: Book {title: $bookTitle})-[:MENTIONS]->(city:City) RETURN city',
+        {bookTitle: bookTitle}
     );
     resultPromise.then(result => {
-        session.close();
+       const cities = result.records.map(r => new City(r.get('city')));
+       return cities;
+       session.close();
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+};
 
-        const singleRecord = result.records[0];
-        const node = singleRecord.get(0);
-
-        console.log(node.properties.title);
-    });
-}
 
 function dropNeo4j() {
     session.run(
@@ -53,7 +50,7 @@ function dropNeo4j() {
 }
 
 module.exports = {
-    insertBook: insertBook,
     dropNeo4j: dropNeo4j,
-    getBookTitleByCityName: getBookTitleByCityName
+    getBookTitleByCityName: getBookTitleByCityName,
+    getCitiesByBookTitle: getCitiesByBookTitle
 }
