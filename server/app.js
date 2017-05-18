@@ -9,11 +9,15 @@ import bodyParser from 'body-parser';
 import './modules/ngJSON';
 import * as facade from './dbFacade/facade';
 import * as connector from './connector/connector';
-
+import * as neo4jDriver from './connector/neo4j';
+import * as neo4jSession from './dbFacade/neo4jSession';
 // import routes from './routes/index';
 import mongoRoutes from './routes/mongoRoutes';
 import neo4jRoutes from './routes/neo4jRoutes';
 
+//neo4jSession.insertBook();
+//neo4jSession.dropNeo4j();
+neo4jSession.getBookTitleByCityName("London");
 const app = express();
 
 connector.getdb('awesome')
