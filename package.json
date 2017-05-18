@@ -30,6 +30,7 @@
     "bower": "1.8.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "config": "^1.26.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "del": "2.2.2",
