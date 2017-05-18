@@ -1,9 +1,9 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-var CitySchema = new Schema({
+const CitySchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -26,7 +26,7 @@ var CitySchema = new Schema({
 
 CitySchema.index({ loc: '2dsphere' });
 
-var City = mongoose.model('City', CitySchema);
+const City = mongoose.model('City', CitySchema);
 
 module.exports = City;
 

@@ -101,29 +101,39 @@ router.get('/author/:author', (req, res) => {
   });
 });
 
-/*router.get('/geolocate/:coords/:maxDistance', (req, res) => {
-  var coords = req.params.coords;
-  console.log('COORDS: ', coords);
-  var maxDistance = req.params.maxDistance;
+/**
+ * @api {get} /geolocate/:coords/:maxDistance Finds boooks and cities in proximity to the coordinates
+ * @apiName getBooksCloseTo
+ * @apiGroup MongoDB
+ *
+ * @apiDescription Used whenever a user wants to find all the books and cities within a distance of the coords
+ * @apiParam {Array}Array of the coordinates(lat,long)
+ * @apiParam {Number} The max distance to search away from the coords (in meters)
+ *
+ * @apiSuccess {Array} An array of book titles and city names and coordinates
+ * @apiSuccess (Success 200) OK
+ */
+router.get('/geolocate/:coords/:maxDistance', (req, res) => {
+  const coords = req.params.coords.split(',');
+  const maxDistance = req.params.maxDistance;
+
   var cities = [];
   City.find({
-  loc: { $nearSphere: coords } }, { _id: 0, name: 1 }, (err, result) => {
-    console.log('RESULT :', result);
+  loc: { $near: coords, $maxDistance: maxDistance}}, { _id: 0, name: 1 }, (err, result) => {
      result.forEach(city => {
-       cities = cities.concat(city);
-       console.log(cities.length);
+       cities = cities.concat(city.name);
      });
       Book.find({
-        cities: { $in: cities } }, { _id: 0, title: 1, author: 1 }, (err, result) => {
+        cities: { $in: cities } }, { _id: 0, title: 1, author: 1 }, (err, books) => {
         if (err) {
           console.error(err);
         } else {
-          res.status(200).ngJSON({ books: result });
+          res.status(200).ngJSON({ books: books, cities: cities });
         }
 
       });
 
     });
-});*/
+});
 
 export default router;
