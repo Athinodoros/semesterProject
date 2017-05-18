@@ -4,6 +4,11 @@ node_js:
   - "node"
 
 dist: trusty
+
+cache:
+  directories:
+    - node_modules
+    - public/bower_components
 services:
   - mongodb
   - neo4j
