@@ -9,6 +9,15 @@
         });
       })
       .controller('query2Ctrl', function ($scope, api, $http) {
+        var mongoCities = [];
+        $scope.searchTitle = () => {
+          api.getCitiesByBook($scope.title)
+              .then(data => {
+               $scope.cities = data.data.cities;
+              }).catch(reason => {
+            console.error(reason);
+          });
 
+        };
       });
 }());
