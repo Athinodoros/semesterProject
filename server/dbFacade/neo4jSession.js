@@ -39,18 +39,40 @@ function getCitiesByBookTitle(bookTitle) {
         });
 };
 
+function getBooksAndCitiesByAuthor(author) {
+    const resultPromise = session.run(
+        'MATCH(b:Book {author: $author})-[:MENTIONS]->(c:City) ' +
+        'with b, collect({name:c.name, loc:c.loc}) as nodes ' +
+        'with {title:b.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}',
+        {author: author}
+    );
+    resultPromise.then(result => {
+        const booksAndCities = result.records[0]._fields[0];
+        console.log(booksAndCities);
+        return booksAndCities;
+        session.close();
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+}
 
 function dropNeo4j() {
     session.run(
-        'MATCH (n) DELETE n'
+        'MATCH (n) DETACH DELETE n'
     ).then(result => {
         session.close();
         console.log(result);
     })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 module.exports = {
     dropNeo4j: dropNeo4j,
     getBookTitleByCityName: getBookTitleByCityName,
-    getCitiesByBookTitle: getCitiesByBookTitle
+    getCitiesByBookTitle: getCitiesByBookTitle,
+    getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor
 }
