@@ -11,10 +11,8 @@
       .controller('query2Ctrl', function ($scope, api, $http) {
         var mongoCities = [];
         $scope.searchTitle = () => {
-          console.log('in q2');
           api.getCitiesByBook($scope.title)
               .then(data => {
-                console.log(data);
                $scope.cities = data.data.cities;
               }).catch(reason => {
             console.error(reason);
