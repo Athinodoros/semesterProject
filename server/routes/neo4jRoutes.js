@@ -1,8 +1,7 @@
 'use strict';
 
 import express from 'express';
-const Book = require('../models/book'); // Change to new files
-const City = require('../models/city'); // Change to new files
+import * as neo4jController from '../dbFacade/neo4jSession';
 const router = express.Router();
 
 /**
@@ -17,23 +16,18 @@ const router = express.Router();
  * @apiSuccess (Success 200) OK
  */
 router.get('/books/:city', (req, res) => {
-  const city = req.params.city;
-
-  // Book.find({
-  //   cities: city,
-  // }, { _id: 0, title: 1, author: 1 }, (err, data) => {
-  //   if (err) {
-  //     console.error(err);
-  //     res.status(500).ngJSON({ message: 'Internal server error' });
-  //   }else if (!data) {
-  //     res.status(204).end();
-  //   }else if (data.length == 0) {
-  //     res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
-  //   } else {
-  //     res.status(200).ngJSON({ books: data });
-  //   }
-  //
-  // });
+    const city = req.params.city;
+    neo4jController.getBookByCityName(city).then(data => {
+        if (!data) {
+            res.status(204).end();
+        } else if (data.length == 0) {
+            res.status(404).ngJSON({message: 'The city was invalid or missing.'});
+        } else {
+            res.status(200).ngJSON({books: data});
+        }
+    }).catch(reason => {
+        console.error(reason);
+    });
 });
 
 export default router;

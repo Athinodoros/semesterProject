@@ -8,16 +8,16 @@ const City = require('../models/neo4jCity');
 
 const session = driver.getDriver();
 
-function getBookTitleByCityName(cityName) {
+function getBookByCityName(cityName) {
     const resultPromise = session.run(
         'MATCH (book: Book)-[:MENTIONS]->(c:City {name: $cityName}) RETURN book',
         {cityName: cityName}
     );
-    resultPromise.then(result => {
-
-        const books = result.records.map(r => new Book(r.get('book')));
-        return books;
+        return resultPromise.then(result => {
         session.close();
+        return result.records.map(r => {
+            return new Book(r.get('book'))
+        });
     })
         .catch((error) => {
             console.error(error);
@@ -29,10 +29,11 @@ function getCitiesByBookTitle(bookTitle) {
         'MATCH (book: Book {title: $bookTitle})-[:MENTIONS]->(city:City) RETURN city',
         {bookTitle: bookTitle}
     );
-    resultPromise.then(result => {
-       const cities = result.records.map(r => new City(r.get('city')));
-       return cities;
+    return resultPromise.then(result => {
        session.close();
+       return result.records.map(r => {
+          return new City(r.get('city'))
+       });
     })
         .catch((error) => {
             console.log(error);
@@ -49,7 +50,6 @@ function getBooksAndCitiesByAuthor(author) {
     );
     resultPromise.then(result => {
         const booksAndCities = result.records[0]._fields[0];
-        console.log(booksAndCities);
         return booksAndCities;
         session.close();
     })
@@ -72,7 +72,7 @@ function dropNeo4j() {
 
 module.exports = {
     dropNeo4j: dropNeo4j,
-    getBookTitleByCityName: getBookTitleByCityName,
+    getBookByCityName: getBookByCityName,
     getCitiesByBookTitle: getCitiesByBookTitle,
     getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor
 }

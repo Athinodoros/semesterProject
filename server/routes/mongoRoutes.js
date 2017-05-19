@@ -24,12 +24,12 @@ router.get('/books/:city', (req, res) => {
 
   query.then(data => {
      if (!data) {
-      res.status(204).end();
-    }else if (data.length == 0) {
-      res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
-    } else {
-      res.status(200).ngJSON({ books: data });
-    }
+          res.status(204).end();
+      }else if (data.length == 0) {
+          res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
+      } else {
+          res.status(200).ngJSON({ books: data });
+      }
 
   }).catch(reason => {
     console.error(reason);
