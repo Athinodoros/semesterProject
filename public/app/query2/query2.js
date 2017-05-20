@@ -8,15 +8,33 @@
           controller: 'query2Ctrl'
         });
       })
-      .controller('query2Ctrl', function ($scope, api, $http) {
-        var mongoCities = [];
+      .controller('query2Ctrl', function ($scope, api, $http, NgMap) {
+        //const API_KEY = 'AIzaSyCmNFQR9dtVroLXP1lF9fw5BYBH0xJUugc';
+
         $scope.searchTitle = () => {
           api.getCitiesByBook($scope.title)
               .then(data => {
-               $scope.cities = data.data.cities;
-              }).catch(reason => {
-            console.error(reason);
-          });
+                /*$scope.cities = [ // Dummy data.
+                 {
+                 "name": "Thessaloniki",
+                 "loc": [22.93086, 40.64361],
+                 "countrycode": "GR"
+                 },
+                 {
+                 "name": "Madrid",
+                 "loc": [-3.70034, 40.41669],
+                 "countrycode": "ES"
+                 }
+                 ];*/
+                $scope.cities = data.data.cities;
+                //$scope.allGeolocations = $scope.cities.flatMap(city => city.loc);
+
+                NgMap.getMap().then(map => {
+                  // console.log(map.getCenter());
+                  // console.log('markers', map.markers);
+                  // console.log('shapes', map.shapes);
+                });
+              });
 
         };
       });

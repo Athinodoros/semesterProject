@@ -5,6 +5,7 @@
   angular.module('awesome', [
     'ngRoute',
     'ui.bootstrap',
+    'ngMap',
     'awesome.directives',
     'awesome.factories',
     'awesome.filters',
