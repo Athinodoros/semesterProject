@@ -15,8 +15,8 @@ import mongoRoutes from './routes/mongoRoutes';
 import neo4jRoutes from './routes/neo4jRoutes';
 
 
-//o4jSession.getCitiesByBookTitle("Bible");
-neo4jSession.getBooksAndCitiesByAuthor("Nos");
+//neo4jSession.getCitiesByBookTitle("Bible");
+//neo4jSession.getBooksAndCitiesByAuthor("Nos");
 const app = express();
 
 connector.getdb('awesome')

@@ -48,7 +48,7 @@ function getBooksAndCitiesByAuthor(author) {
         'return {books: collect(containerNode)}',
         {author: author}
     );
-    resultPromise.then(result => {
+    return resultPromise.then(result => {
         const booksAndCities = result.records[0]._fields[0];
         return booksAndCities;
         session.close();
