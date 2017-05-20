@@ -12,16 +12,16 @@ const driver = neo4j.driver("bolt://localhost", neo4j.auth.basic(nConfig.get("us
 
 //Register a callback to know if driver creation was successful
 driver.onCompleted = () => {
-    console.log("Connection to Neo4j is successful");
-}
+  console.log("Connection to Neo4j is successful");
+};
 
 // Register a callback to know if driver creation failed.
-driver.onError = () => {
-    console.log('Driver instantiation failed', error);
-}
+driver.onError = (error) => {
+  console.log('Driver instantiation failed', error);
+};
 
 //export the driver
 exports.getDriver = function () {
-        return driver.session();
+  return driver.session();
 };
 
