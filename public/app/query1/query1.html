@@ -18,11 +18,11 @@
                    placeholder="Athens" style="margin-bottom: 20px;"
                    class="form-control input-sm text-default input-inverse"
                    id="city" ng-maxlength="30" required/>
-            <button class="btn btn-info" ng-click="searchCity()">Search</button>
+            <button class="btn btn-info" id="enter" ng-click="searchCity()">Search</button>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div ng-repeat="book in books">
-                <h5>"{{book.title}}", <small>written by {{book.author}}</small></h5>
+                <h5 id="book{{$index}}">"{{book.title}}", <small>written by {{book.author}}</small></h5>
             </div>
         </div>
     </div>
