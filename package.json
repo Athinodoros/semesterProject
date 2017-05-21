@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env NODE_ENV=production ./server/bin/www",
+    "start": "cross-env NODE_ENV=production node ./dist/bin/www.js",
     "test": "cross-env NODE_ENV=test gulp test:mocha",
-    "dev": "cross-env NODE_ENV=test nodemon ./server/bin/www"
+    "dev": "cross-env NODE_ENV=test nodemon ./dist/bin/www.js"
   },
   "cacheDirectories": [
     "node_modules",
@@ -84,6 +84,7 @@
     "gulp-strip-comments": "2.4.3",
     "gulp-uglify": "1.5.3",
     "gulp-util": "3.0.7",
+    "is-empty": "1.2.0",
     "nyc": "^10.3.2",
     "should": "8.3.1",
     "supertest": "3.0.0"

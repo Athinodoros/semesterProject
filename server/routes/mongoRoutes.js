@@ -19,14 +19,14 @@ const router = express.Router();
 router.get('/books/:city', (req, res) => {
   const city = req.params.city;
   let query = Book.find({
-    cities: city
+    cities: city,
   }, { _id: 0, title: 1, author: 1 }).exec();
 
   query.then(data => {
     if (!data) {
       res.status(204).end();
     } else if (data.length == 0) {
-      res.status(404).ngJSON({ message: 'The city was invalid or missing.' });
+      res.status(400).ngJSON({ message: 'The city was invalid or missing.' });
     } else {
       res.status(200).ngJSON({ books: data });
     }
@@ -50,22 +50,24 @@ router.get('/books/:city', (req, res) => {
 router.get('/title/:book', (req, res) => {
   const book = req.params.book;
   const query = Book.find({
-    title: book
+    title: book,
   }, { _id: 0, cities: 1 }).exec();
   query.then(result => {
+    if (result[0] === undefined) {
+      return res.status(400).ngJSON({ message: 'The title was invalid or missing.' });
+    }
+
     var returnedCities = result[0].cities;
     let query1 = City.find({ name: { $in: returnedCities } }, {
       _id: 0,
       name: 1,
       loc: 1,
-      countrycode: 1
+      countrycode: 1,
     }).exec();
     query1.then(data => {
       if (!data) {
         res.status(204).end();
-      } else if (data.length === 0) {
-        res.status(404).ngJSON({ message: 'The title was invalid or missing.' });
-      } else {
+      }  else {
         res.status(200).ngJSON({ cities: data });
       }
     });
@@ -87,11 +89,17 @@ router.get('/title/:book', (req, res) => {
  */
 router.get('/author/:author', (req, res) => {
   const author = req.params.author;
+  if(author === 'undefined'){
+    return res.status(400).ngJSON({ message: 'The author name was missing.' });
+  }
   let cities = [];
   let titles = [];
   let citiesWithLoc = [];
   const query = Book.find({ author: author }, { _id: 0, title: 1, cities: 1 }).exec();
   query.then(data => {
+    if(data.length == 0) {
+      return res.status(404).ngJSON({ message: 'No books found by this author.'});
+    }
     data.forEach(book => {
       cities = cities.concat(book.cities);
       titles = titles.concat(book.title);
@@ -101,7 +109,7 @@ router.get('/author/:author', (req, res) => {
       citiesWithLoc.push(data);
       res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
     }).catch(reason => {
-      console.error(reason)
+      console.error(reason);
     });
   });
 });
@@ -124,13 +132,17 @@ router.get('/geolocate/:coords/:maxDistance', (req, res) => {
 
   var cities = [];
   City.find({
-    loc: { $near: coords, $maxDistance: maxDistance }
+    loc: { $near: coords, $maxDistance: maxDistance },
   }, { _id: 0, name: 1 }, (err, result) => {
+    if (result === undefined) {
+      return res.status(400).ngJSON({ message: 'The coords were invalid or missing.' });
+    }
+
     result.forEach(city => {
       cities = cities.concat(city.name);
     });
     Book.find({
-      cities: { $in: cities }
+      cities: { $in: cities },
     }, { _id: 0, title: 1, author: 1 }, (err, books) => {
       if (err) {
         console.error(err);
