@@ -167,7 +167,7 @@ describe('MongoDB Routes Q1', function () {
             error.message.should.equal('No books found by this author.');
             done(err);
           });
-    })
+    });
   });
   describe('Query 4', () => {
     it('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
