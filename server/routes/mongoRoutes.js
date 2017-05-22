@@ -37,7 +37,7 @@ router.get('/books/:city', (req, res) => {
 });
 
 /**
- * @api {get} /books/:book Finds all books (titles and authors) based on a city name
+ * @api {get} /title/:book Finds all books (titles and authors) based on a book name
  * @apiName getBooksByTitle
  * @apiGroup MongoDB
  *
@@ -50,8 +50,9 @@ router.get('/books/:city', (req, res) => {
 router.get('/title/:book', (req, res) => {
   const book = req.params.book;
   let returnedCities = [];
+  let returnedCodes = [];
   const query = Book.find({
-    title: book,
+    title: book
   }, { _id: 0, cities: 1 }).exec();
   query.then(result => {
     if (result[0] === undefined) {
@@ -59,9 +60,9 @@ router.get('/title/:book', (req, res) => {
     }
     result[0].cities.forEach(city => {
       returnedCities = returnedCities.concat(city.name);
+      returnedCodes = returnedCodes.concat(city.countrycode);
     });
-
-    let query1 = City.find({ name: { $in: returnedCities } }, {
+    let query1 = City.find({ name: { $in: returnedCities }, countrycode: { $in: returnedCodes} }, {
       _id: 0,
       name: 1,
       loc: 1,
@@ -96,6 +97,7 @@ router.get('/author/:author', (req, res) => {
     return res.status(400).ngJSON({ message: 'The author name was missing.' });
   }
   let cities = [];
+  let countryCodes = [];
   let titles = [];
   let citiesWithLoc = [];
   const query = Book.find({ author: author }, { _id: 0, title: 1, cities: 1 }).exec();
@@ -106,10 +108,11 @@ router.get('/author/:author', (req, res) => {
     data.forEach(book => {
       book.cities.forEach(city => {
         cities = cities.concat(city.name);
+        countryCodes = countryCodes.concat(city.countrycode);
       });
       titles = titles.concat(book.title);
     });
-    let query1 = City.find({ name: { $in: cities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
+    let query1 = City.find({ name: { $in: cities }, countrycode: {$in: countryCodes} }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
     query1.then(data => {
       citiesWithLoc.push(data);
       res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
