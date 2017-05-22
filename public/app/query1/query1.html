@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="page-header">
-            <h4>Given a city name your application returns all book titles with corresponding authors that
-                mention
-                this city.
+            <h4 id="query1Specific">
+                Given a city name your application returns all book titles with corresponding authors that
+                mention this city.
             </h4>
         </div>
     </div>
@@ -22,7 +22,9 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div ng-repeat="book in books">
-                <h5 id="book{{$index}}">"{{book.title}}", <small>written by {{book.author}}</small></h5>
+                <h5 id="book{{$index}}">"{{book.title}}",
+                    <small>written by {{book.author}}</small>
+                </h5>
             </div>
         </div>
     </div>
