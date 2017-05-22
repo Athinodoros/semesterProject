@@ -5,8 +5,26 @@
     "author": "Athinodoros",
     "release_date": "1500 BC",
     "cities" : [
-      "Athens",
-      "Thessaloniki"
+      {
+        "name": "Athens",
+        "asciiname": "Athens",
+        "loc":  [
+          23.7275,
+          37.9838
+        ]
+      ,
+        "countrycode": "GR"
+      },
+      {
+        "name": "Thessaloniki",
+        "asciiname": "Thessaloniki",
+        "loc":  [
+          22.93086,
+          40.64361
+        ]
+      ,
+        "countrycode": "GR"
+      }
     ],
     "language": "Greek"
   },
@@ -17,9 +35,36 @@
     "author": "Benthinodoros",
     "release_date": "1971 AD",
     "cities" : [
-      "London",
-      "Cardiff",
-      "Manchester"
+      {
+        "name": "London",
+        "asciiname": "London",
+        "loc":  [
+          23.7275,
+          37.9838
+        ]
+      ,
+        "countrycode": "UK"
+      },
+      {
+        "name": "Cardiff",
+        "asciiname": "Cardiff",
+        "loc":  [
+          23.7275,
+          37.9838
+        ]
+      ,
+        "countrycode": "UK"
+      },
+      {
+        "name": "Manchester",
+        "asciiname": "Manchester",
+        "loc":  [
+          23.7275,
+          37.9838
+        ]
+      ,
+        "countrycode": "UK"
+      }
     ],
     "language": "English"
   },
@@ -29,8 +74,26 @@
     "author": "RichyDoricous",
     "release_date": "1500 BC",
     "cities" : [
-      "Athens",
-      "Thessaloniki"
+      {
+        "name": "Athens",
+        "asciiname": "Athens",
+        "loc":  [
+          23.7275,
+          37.9838
+        ]
+      ,
+        "countrycode": "GR"
+      },
+      {
+        "name": "Thessaloniki",
+        "asciiname": "Thessaloniki",
+        "loc":  [
+          22.93086,
+          40.64361
+        ]
+      ,
+        "countrycode": "GR"
+      }
     ],
     "language": "Greek"
   },
@@ -40,8 +103,26 @@
     "author": "Athinodoros",
     "release_date": "1500 BC",
     "cities" : [
-      "Copenhagen",
-      "Mars"
+      {
+        "name": "Copenhagen",
+        "asciiname": "Copenhagen",
+        "loc":  [
+          22.93086,
+          40.64361
+        ]
+      ,
+        "countrycode": "DK"
+      },
+      {
+        "name": "Mars",
+        "asciiname": "Mars",
+        "loc":  [
+          22.93086,
+          40.64361
+        ]
+      ,
+        "countrycode": "PL"
+      }
     ],
     "language": "Greek"
   }
