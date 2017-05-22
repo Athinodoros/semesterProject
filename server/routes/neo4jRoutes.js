@@ -21,8 +21,10 @@ router.get('/books/:city', (req, res) => {
         if (!data) {
             res.status(204).end();
         } else if (data.length == 0) {
-            res.status(404).ngJSON({message: 'The city was invalid or missing.'});
+            console.log(data)
+            res.status(404).ngJSON({message: 'The city was invalid or missing.' + " " + city});
         } else {
+            console.log(data)
             res.status(200).ngJSON({books: data});
         }
     }).catch(reason => {
