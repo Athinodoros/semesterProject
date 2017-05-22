@@ -169,8 +169,8 @@ describe('MongoDB Routes Q1', function () {
           });
     });
   });
-  describe('Query 4', () => {
-    it.skip('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
+  describe.skip('Query 4', () => {
+    it('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
       var coords = [22.93086, 40.64361];
       var maxDistance = 100000;
       request

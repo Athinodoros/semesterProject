@@ -10,10 +10,10 @@ const session = driver.getDriver();
 
 function getBookByCityName(cityName) {
     const resultPromise = session.run(
-        'MATCH (book: Book)-[:MENTIONS]->(c:City {name: $cityName}) RETURN book',
+        'MATCH (book: BOOK)-[:MENTIONS]->(c:CITY {name: $cityName}) RETURN book',
         {cityName: cityName}
     );
-        return resultPromise.then(result => {
+    return resultPromise.then(result => {
         session.close();
         return result.records.map(r => {
             return new Book(r.get('book'))
@@ -30,15 +30,84 @@ function getCitiesByBookTitle(bookTitle) {
         {bookTitle: bookTitle}
     );
     return resultPromise.then(result => {
-       session.close();
-       return result.records.map(r => {
-          return new City(r.get('city'))
-       });
+        session.close();
+        return result.records.map(r => {
+            return new City(r.get('city'))
+        });
     })
         .catch((error) => {
             console.log(error);
         });
 };
+
+function setCities(city) {
+    console.log(city)
+    console.log("======================")
+    const resultPromise = session.run(
+        ' CREATE (city : CITY {name :$name ,  asciiname : $asciiname ,' +
+        ' longitude : $longitude , latitude : $latitude ,' +
+        ' countryCode : $countryCode , population : $population  }) RETURN city',
+        {
+            name: city.name,
+            asciiname: city.asciiname,
+            longitude: city.longitude,
+            latitude: city.latitude,
+            countryCode: city.countryCode,
+            population: city.population,
+        }
+    );
+    return resultPromise.then(result => {
+        session.close();
+        return result.records.map(r => {
+            return new City(r.get('city'))
+        });
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+
+function setBooks(book) {
+    // console.log(city)
+    // console.log("======================")
+    book.cities.forEach(function (city, cityIndex, mArray) {
+
+        const resultPromise = session.run(
+            ' MATCH (a:CITY {name : $cityName, countryCode:$countryCode , longitude : $longitude}) ' +
+            ' MERGE (book : BOOK { ' +
+            ' filename : $filename ,' +
+            ' title : $title ,' +
+            ' author : $author ,' +
+            ' release_date : $release_date ,' +
+            ' language : $language  })' +
+            'MERGE (book)-[r:MENTIONS]->(a) RETURN r',
+
+            {
+                filename: book.filename,
+                title: book.title,
+                author: book.author,
+                release_date: book.release_date,
+                language: book.language,
+                longitude: city.loc[1],
+                cityName: city.name,
+                countryCode: city.countryCode
+            }
+        );
+        return resultPromise.then(result => {
+            session.close();
+            return result.records.map(r => {
+                return book; //new Book(r.get('title'))
+            });
+        })
+            .catch((error) => {
+                console.log(error);
+            });
+    })
+
+
+};
+
 
 function getBooksAndCitiesByAuthor(author) {
     const resultPromise = session.run(
@@ -74,5 +143,7 @@ module.exports = {
     dropNeo4j: dropNeo4j,
     getBookByCityName: getBookByCityName,
     getCitiesByBookTitle: getCitiesByBookTitle,
-    getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor
+    getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor,
+    addCities: setCities,
+    addBooks: setBooks,
 }

@@ -14,10 +14,15 @@ import * as neo4jSession from './dbFacade/neo4jSession';
 import mongoRoutes from './routes/mongoRoutes';
 import neo4jRoutes from './routes/neo4jRoutes';
 
+import importer from './utils/bookImporter';
 
-//neo4jSession.getCitiesByBookTitle("Bible");
+
+// neo4jSession.getCitiesByBookTitle("Bible");
 //neo4jSession.getBooksAndCitiesByAuthor("Nos");
+// importer.allBooks();
 const app = express();
+
+
 
 connector.getdb('awesome')
     .then(dbin => {
