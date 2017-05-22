@@ -12,6 +12,9 @@ cache:
 services:
   - mongodb
   - neo4j
+  
+ignore:
+  - test/client-side/*
 
 before_install:
   - npm install -g npm@3.9.3
