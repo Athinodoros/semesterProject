@@ -4,6 +4,7 @@
 
 var MongoClient = require('mongodb').MongoClient;
 var Server = require('mongodb').Server;
+var Promise = require('promise');
 var mongoose = require('mongoose');
 var tunnel = require('tunnel-ssh');
 var os = require("os");
@@ -34,7 +35,7 @@ var config = {
 //}
 console.log(process.platform);
 console.log(os.type());
-var Promise = require('promise');
+
 
 var db;
 
@@ -62,7 +63,8 @@ function getNewdb(databaseName) {
                     if (!databaseName) throw new Error("the db name was not spesified");
 
                     var connectionString = "mongodb://localhost:27000/" + databaseName;
-                    console.log(connectionString)
+                    console.log(connectionString);
+                    mongoose.Promise = global.Promise;
                     mongoose.connect(connectionString, function (err, res) {
                         if (err) {
 
@@ -91,7 +93,8 @@ function getNewdb(databaseName) {
             if (!databaseName) throw new Error("the db name was not spesified");
 
             var connectionString = "mongodb://localhost:27017/" + databaseName;
-            console.log(connectionString)
+            console.log(connectionString);
+            mongoose.Promise = global.Promise;
             mongoose.connect(connectionString, function (err, res) {
                 if (err) {
 

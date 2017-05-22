@@ -23,8 +23,8 @@
     "name": "Thessaloniki3",
     "asciiname": "Thessaloniki3",
     "loc":  [
-        22.93086,
-        40.64361
+      23.716091,
+      38.004566
       ],
     "countrycode": "GR"
   },
@@ -42,8 +42,8 @@
     "name": "Copenhagen",
     "asciiname": "Copenhagen",
     "loc": [
-        22.93086,
-        40.64361
+      12.568337,
+      55.676098
       ]
     ,
     "countrycode": "DK"
