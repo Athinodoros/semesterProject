@@ -2,7 +2,7 @@
   "Customer": {
     "neo4jConfig": {
       "username": "neo4j",
-      "password": "benthehorn" // Change this to your own password
+      "password": "neo4j" // Change this to your own password
     }
   }
 }
