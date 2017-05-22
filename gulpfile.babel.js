@@ -109,7 +109,20 @@ gulp.task('test:codecov', () => {
 });
 
 gulp.task('test:mocha', ['mocha:env', 'mocha:coverage'], () => {
-  return gulp.src('test/**/*.js', { read: false })
+  return gulp.src(['test/**/*.js', '!test/client-side/selenium.js'], { read: false })
+      .pipe(mocha({
+        reporter: 'spec',
+        ui: 'bdd',
+        timeout: 4000,
+      }))
+      .pipe(istanbul.writeReports())
+      .pipe(istanbul.enforceThresholds({thresholds:{ functions: 50 } }))
+      .once('error', () => process.exit(1))
+      .once('end', () => process.exit());
+});
+
+gulp.task('test:selenium', ['mocha:env', 'mocha:coverage'], () => {
+  return gulp.src('test/client-side/selenium.js', { read: false })
       .pipe(mocha({
         reporter: 'spec',
         ui: 'bdd',
