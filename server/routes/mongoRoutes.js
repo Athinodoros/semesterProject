@@ -17,9 +17,9 @@ const router = express.Router();
  * @apiSuccess (Success 200) OK
  */
 router.get('/books/:city', (req, res) => {
-  const city = req.params.city;
+  let city = req.params.city;
   let query = Book.find({
-    cities: city,
+    'cities.name': city,
   }, { _id: 0, title: 1, author: 1 }).exec();
 
   query.then(data => {
@@ -49,6 +49,7 @@ router.get('/books/:city', (req, res) => {
  */
 router.get('/title/:book', (req, res) => {
   const book = req.params.book;
+  let returnedCities = [];
   const query = Book.find({
     title: book,
   }, { _id: 0, cities: 1 }).exec();
@@ -56,8 +57,10 @@ router.get('/title/:book', (req, res) => {
     if (result[0] === undefined) {
       return res.status(400).ngJSON({ message: 'The title was invalid or missing.' });
     }
+    result[0].cities.forEach(city => {
+      returnedCities = returnedCities.concat(city.name);
+    });
 
-    var returnedCities = result[0].cities;
     let query1 = City.find({ name: { $in: returnedCities } }, {
       _id: 0,
       name: 1,
@@ -101,7 +104,9 @@ router.get('/author/:author', (req, res) => {
       return res.status(404).ngJSON({ message: 'No books found by this author.'});
     }
     data.forEach(book => {
-      cities = cities.concat(book.cities);
+      book.cities.forEach(city => {
+        cities = cities.concat(city.name);
+      });
       titles = titles.concat(book.title);
     });
     let query1 = City.find({ name: { $in: cities } }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
