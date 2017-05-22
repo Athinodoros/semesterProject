@@ -30,7 +30,6 @@ router.get('/books/:city', (req, res) => {
     } else {
       res.status(200).ngJSON({ books: data });
     }
-
   }).catch(reason => {
     console.error(reason);
   });

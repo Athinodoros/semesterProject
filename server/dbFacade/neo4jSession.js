@@ -4,56 +4,75 @@
 
 const driver = require('../connector/neo4j');
 const Book = require('../models/neo4jBook');
+const City = require('../models/neo4jCity');
 
 const session = driver.getDriver();
 
-function getBookTitleByCityName(cityName) {
+function getBookByCityName(cityName) {
     const resultPromise = session.run(
         'MATCH (book: Book)-[:MENTIONS]->(c:City {name: $cityName}) RETURN book',
         {cityName: cityName}
     );
-    resultPromise.then(result => {
-
-        const books = result.records.map(r => new Book(r.get('book')));
-        console.log(books);
-        return books;
+        return resultPromise.then(result => {
         session.close();
+        return result.records.map(r => {
+            return new Book(r.get('book'))
+        });
     })
         .catch((error) => {
             console.error(error);
         });
 };
 
-// just testing
-function insertBook() {
-    const title = 'Seven Hells';
-    const author = 'Nos';
-    const cities = ['Athens', 'London']
+function getCitiesByBookTitle(bookTitle) {
     const resultPromise = session.run(
-        'CREATE (a: Book {title: $title, author: $author, cities: $cities}) RETURN a',
-        {title: title, author: author, cities: cities}
+        'MATCH (book: Book {title: $bookTitle})-[:MENTIONS]->(city:City) RETURN city',
+        {bookTitle: bookTitle}
     );
-    resultPromise.then(result => {
+    return resultPromise.then(result => {
+       session.close();
+       return result.records.map(r => {
+          return new City(r.get('city'))
+       });
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+function getBooksAndCitiesByAuthor(author) {
+    const resultPromise = session.run(
+        'MATCH(b:Book {author: $author})-[:MENTIONS]->(c:City) ' +
+        'with b, collect({name:c.name, loc:c.loc}) as nodes ' +
+        'with {title:b.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}',
+        {author: author}
+    );
+    return resultPromise.then(result => {
+        const booksAndCities = result.records[0]._fields[0];
+        return booksAndCities;
         session.close();
-
-        const singleRecord = result.records[0];
-        const node = singleRecord.get(0);
-
-        console.log(node.properties.title);
-    });
+    })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 function dropNeo4j() {
     session.run(
-        'MATCH (n) DELETE n'
+        'MATCH (n) DETACH DELETE n'
     ).then(result => {
         session.close();
         console.log(result);
     })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 module.exports = {
-    insertBook: insertBook,
     dropNeo4j: dropNeo4j,
-    getBookTitleByCityName: getBookTitleByCityName
+    getBookByCityName: getBookByCityName,
+    getCitiesByBookTitle: getCitiesByBookTitle,
+    getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor
 }
