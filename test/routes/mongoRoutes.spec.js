@@ -169,17 +169,18 @@ describe('MongoDB Routes Q1', function () {
           });
     });
   });
-  describe.skip('Query 4', () => {
-    it('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
-      var coords = [22.93086, 40.64361];
-      var maxDistance = 100000;
+  describe('Query 4', () => {
+    it.only('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
+      var coords = [55.17128, 25.0657];
+      var maxDistance = 1000000;
       request
         .get(`/api/mongo/geolocate/${coords}/${maxDistance}`)
           .send({})
           .expect(200)
           .end((err, res) => {
+            console.log(res.body);
             var response = res.body;
-            response.cities[0].should.equal('Thessaloniki');
+            response.cities.length.should.equal(4);
             done(err);
           });
     });
