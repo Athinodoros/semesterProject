@@ -7,6 +7,7 @@ const City = module.exports = function (cityObj) {
     const city = cityObj.properties;
     this.name = city.name;
     this.asciiname = city.asciiname;
-    this.loc = city.loc;
+    this.latitude = city.latitude;
+    this.longitude = city.longitude;
     this.countryCode = city.countryCode;
 };

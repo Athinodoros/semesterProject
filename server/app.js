@@ -17,9 +17,8 @@ import neo4jRoutes from './routes/neo4jRoutes';
 import importer from './utils/bookImporter';
 
 
-// neo4jSession.getCitiesByBookTitle("Bible");
 //neo4jSession.getBooksAndCitiesByAuthor("Nos");
-// importer.allBooks();
+//importer.allBooks();
 const app = express();
 
 
