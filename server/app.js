@@ -20,6 +20,7 @@ import importer from './utils/bookImporter';
 // neo4jSession.getCitiesByBookTitle("Bible");
 //neo4jSession.getBooksAndCitiesByAuthor("Nos");
 // importer.allBooks();
+importer.addAllCities();
 const app = express();
 
 
