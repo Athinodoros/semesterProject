@@ -170,7 +170,7 @@ describe('MongoDB Routes Q1', function () {
     });
   });
   describe('Query 4', () => {
-    it.only('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
+    it.skip('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
       var coords = [55.17128, 25.0657];
       var maxDistance = 1000000;
       request
@@ -180,7 +180,7 @@ describe('MongoDB Routes Q1', function () {
           .end((err, res) => {
             console.log(res.body);
             var response = res.body;
-            response.cities.length.should.equal(4);
+            response.cities.length.should.equal(5);
             done(err);
           });
     });
