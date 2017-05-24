@@ -8,7 +8,7 @@
           controller: 'query1Ctrl'
         });
       })
-      .controller('query1Ctrl', function ($scope, api, $http) {
+      .controller('query1Ctrl', function ($scope, api) {
 
         $scope.searchCity = () => {
           api.getBooksByCity($scope.city)

@@ -46,7 +46,7 @@ router.get('/books/:city', (req, res) => {
  * @apiSuccess {Array} An array of cities containing the latitude and longitude
  * @apiSuccess (Success 200) OK
  */
-router.get('/title/:book', (req, res) => {
+router.get('/titles/:book', (req, res) => {
   const book = req.params.book;
   let returnedCities = [];
   let returnedCodes = [];
@@ -61,7 +61,7 @@ router.get('/title/:book', (req, res) => {
       returnedCities = returnedCities.concat(city.name);
       returnedCodes = returnedCodes.concat(city.countrycode);
     });
-    let query1 = City.find({ name: { $in: returnedCities }, countrycode: { $in: returnedCodes} }, {
+    let query1 = City.find({ name: { $in: returnedCities }, countrycode: { $in: returnedCodes } }, {
       _id: 0,
       name: 1,
       loc: 1,
@@ -70,7 +70,7 @@ router.get('/title/:book', (req, res) => {
     query1.then(data => {
       if (!data) {
         res.status(204).end();
-      }  else {
+      } else {
         res.status(200).ngJSON({ cities: data });
       }
     });
@@ -90,9 +90,9 @@ router.get('/title/:book', (req, res) => {
  * @apiSuccess {Array} An array of book titles and city names and coordinates
  * @apiSuccess (Success 200) OK
  */
-router.get('/author/:author', (req, res) => {
+router.get('/authors/:author', (req, res) => {
   const author = req.params.author;
-  if(author === 'undefined'){
+  if (author === 'undefined') {
     return res.status(400).ngJSON({ message: 'The author name was missing.' });
   }
   let cities = [];
@@ -101,8 +101,8 @@ router.get('/author/:author', (req, res) => {
   let citiesWithLoc = [];
   const query = Book.find({ author: author }, { _id: 0, title: 1, cities: 1 }).exec();
   query.then(data => {
-    if(data.length == 0) {
-      return res.status(404).ngJSON({ message: 'No books found by this author.'});
+    if (data.length == 0) {
+      return res.status(404).ngJSON({ message: 'No books found by this author.' });
     }
     data.forEach(book => {
       book.cities.forEach(city => {
@@ -111,7 +111,12 @@ router.get('/author/:author', (req, res) => {
       });
       titles = titles.concat(book.title);
     });
-    let query1 = City.find({ name: { $in: cities }, countrycode: {$in: countryCodes} }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
+    const query1 = City.find({ name: { $in: cities }, countrycode: { $in: countryCodes } }, {
+      _id: 0,
+      name: 1,
+      loc: 1,
+      countrycode: 1
+    }).exec();
     query1.then(data => {
       citiesWithLoc.push(data);
       res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
@@ -137,12 +142,12 @@ router.get('/geolocate/:coords/:maxDistance', (req, res) => {
   const coords = req.params.coords.split(',');
   const maxDistance = req.params.maxDistance;
 
-  var cities = [];
+  let cities = [];
   City.find({
     loc: { $near: coords, $maxDistance: maxDistance },
   }, { _id: 0, name: 1 }, (err, result) => {
     if (result === undefined) {
-      return res.status(400).ngJSON({ message: 'The coords were invalid or missing.' });
+      return res.status(400).ngJSON({ message: 'The coordinates were invalid or missing.' });
     }
 
     result.forEach(city => {
