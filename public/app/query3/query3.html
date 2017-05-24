@@ -13,7 +13,23 @@
             <img src="../../img/leaf.png" alt="mongo logo" height="100px;">
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            BUTTON, DISPLAY RESULT GOES HERE..
+            <input type="text" ng-model="author" name="author"
+                   placeholder="Athinodoros" style="margin-bottom: 20px;"
+                   class="form-control input-sm text-default input-inverse"
+                   id="author" ng-maxlength="30" required/>
+            <button class="btn btn-info" ng-click="searchAuthor()">Search</button>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h4 ng-if="titles">Books:</h4>
+            <ul ng-repeat="title in titles">
+                <li><h5>"{{title}}"</h5></li>
+            </ul>
+            <ng-map ng-if="cities" id="map" zoom="1" center="current position">
+                <div ng-repeat="city in cities[0]">
+                    <marker position="{{city.loc[1]}},{{city.loc[0]}}" title="{{city.name}}"
+                            animation="Animation.DROP"></marker>
+                </div>
+            </ng-map>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
