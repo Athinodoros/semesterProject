@@ -8,7 +8,7 @@
           controller: 'query2Ctrl'
         });
       })
-      .controller('query2Ctrl', function ($scope, api, $http, NgMap) {
+      .controller('query2Ctrl', function ($scope, api, NgMap) {
         //const API_KEY = 'AIzaSyCmNFQR9dtVroLXP1lF9fw5BYBH0xJUugc';
 
         $scope.searchTitle = () => {

@@ -8,7 +8,14 @@
           controller: 'query3Ctrl'
         });
       })
-      .controller('query3Ctrl', function ($scope, api, $http) {
-
+      .controller('query3Ctrl', function ($scope, api, NgMap) {
+        $scope.searchAuthor = () => {
+          api.getBooksByAuthor($scope.author)
+              .then(data => {
+                $scope.titles = data.data.titles;
+                $scope.cities = data.data.cities;
+                NgMap.getMap().then(map => {});
+              });
+        }
       });
 }());
