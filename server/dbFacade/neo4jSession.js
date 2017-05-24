@@ -123,6 +123,31 @@ function getBooksAndCitiesByAuthor(author) {
         });
 }
 
+function getBooksAndCitiesByCoordinates(coords, maxDistance) {
+    const resultPromise = session.run(
+        'MATCH (book:BOOK)-[:MENTIONS]->(city:CITY) ' +
+        'WITH  book, city, distance( point({ latitude: $latitude, longitude: $longitude }), ' +
+        'point({ latitude: city.latitude, longitude:city.longitude }) ) as dist ' +
+        'WHERE dist <= $maxDistance ' +
+        'with book, collect({name:city.name, latitude:city.latitude, longitude: city.longitude}) as nodes ' +
+        'with {title:book.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}',
+        {latitude: coords[0],
+         longitude: coords[1],
+        maxDistance: maxDistance}
+    );
+    return resultPromise.then(result => {
+        const booksAndCities = result.records[0]._fields[0];
+        return booksAndCities;
+        session.close();
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+//const coords = [51.50853, -0.12574]
+//getBooksAndCitiesByCoordinates(coords, 50*1000);
+
 //deletes all nodes and relationships in neo4j database, use with care
 function dropNeo4j() {
     session.run(

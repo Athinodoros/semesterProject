@@ -84,4 +84,32 @@ router.get('/author/:author', (req, res) => {
     });
 });
 
+/**
+ * @api {get} /geolocate/:coords/:maxDistance Finds all books and cities in vicinity of coordinates and max Distance
+ * @apiName getBooksAndCities
+ * @apiGroup Neo4j
+ *
+ * @apiDescription Used whenever a user wants to find all the books and cities mentioned by an author
+ * @apiParam {String} The authors name
+ *
+ * @apiSuccess {Array} An array of book titles and city names and coordinates
+ * @apiSuccess (Success 200) OK
+ */
+
+router.get('/geolocate/:coords/:maxDistance', (req, res) => {
+    const coords = req.params.coords.split(',').map(Number);
+    console.log(coords);
+    const maxDistance = req.params.maxDistance;
+    neo4jController.getBooksAndCitiesByAuthor(coords, maxDistance ).then(data => {
+        if (!data) {
+            res.status(204).end();
+        } else if (data.length == 0) {
+            res.status(404).ngJSON({message: 'The coordinates or maxDistance was invalid or missing.'});
+        } else {
+            res.status(200).ngJSON({booksAndCities: data});
+        }
+    }).catch(reason => {
+        console.error(reason);
+    });
+});
 export default router;
