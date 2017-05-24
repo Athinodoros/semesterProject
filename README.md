@@ -4,6 +4,8 @@
 # semesterProject
 CphBusiness Semester Project
 
+- LINK TO REPORT: https://docs.google.com/document/d/16iIwkktVjNUTk9_2rvSnXQh9W5XKyvjCbxcCTnw8UF4/edit?usp=sharing 
+
 Start by cloning the project using the `git clone <project>` command in your requested folder.
 Move into the root folder of the project, and run in the terminal:
 
