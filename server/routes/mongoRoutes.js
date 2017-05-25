@@ -47,34 +47,19 @@ router.get('/books/:city', (req, res) => {
  * @apiSuccess (Success 200) OK
  */
 router.get('/titles/:book', (req, res) => {
-  const book = req.params.book;
+const book = req.params.book;
   let returnedCities = [];
   let returnedCodes = [];
   const query = Book.find({
     title: book
-  }, { _id: 0, cities: 1 }).exec();
+  }, { _id: 0, cities: 1}).exec();
   query.then(result => {
-    if (result[0] === undefined) {
-      return res.status(400).ngJSON({ message: 'The title was invalid or missing.' });
+    if(result[0] === undefined){
+      return res.status(400).ngJSON({message: 'The title was invalid or missing.'});
+    } else {
+      res.status(200).ngJSON({ cities: result[0].cities });
     }
-    result[0].cities.forEach(city => {
-      returnedCities = returnedCities.concat(city.name);
-      returnedCodes = returnedCodes.concat(city.countrycode);
-    });
-    let query1 = City.find({ name: { $in: returnedCities }, countrycode: { $in: returnedCodes } }, {
-      _id: 0,
-      name: 1,
-      loc: 1,
-      countrycode: 1,
-    }).exec();
-    query1.then(data => {
-      if (!data) {
-        res.status(204).end();
-      } else {
-        res.status(200).ngJSON({ cities: data });
-      }
-    });
-  }).catch(reason => {
+  }).catch(reason =>{
     console.error(reason);
   });
 });
