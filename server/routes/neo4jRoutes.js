@@ -98,9 +98,9 @@ router.get('/author/:author', (req, res) => {
 
 router.get('/geolocate/:coords/:maxDistance', (req, res) => {
     const coords = req.params.coords.split(',').map(Number);
-    console.log(coords);
-    const maxDistance = req.params.maxDistance;
-    neo4jController.getBooksAndCitiesByAuthor(coords, maxDistance ).then(data => {
+    let maxDistance = req.params.maxDistance;
+    maxDistance = parseInt(maxDistance);
+    neo4jController.getBooksAndCitiesByCoordinates(coords, maxDistance ).then(data => {
         if (!data) {
             res.status(204).end();
         } else if (data.length == 0) {

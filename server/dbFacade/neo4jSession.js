@@ -145,8 +145,10 @@ function getBooksAndCitiesByCoordinates(coords, maxDistance) {
             console.log(error);
         });
 }
-//const coords = [51.50853, -0.12574]
-//getBooksAndCitiesByCoordinates(coords, 50*1000);
+/*const coords = [51.50853, -0.12574]
+getBooksAndCitiesByCoordinates(coords, 50*1000).then(result => {
+    console.log(result);
+});*/
 
 //deletes all nodes and relationships in neo4j database, use with care
 function dropNeo4j() {
@@ -168,4 +170,5 @@ module.exports = {
     getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor,
     addCities: setCities,
     addBooks: setBooks,
+    getBooksAndCitiesByCoordinates: getBooksAndCitiesByCoordinates
 }
