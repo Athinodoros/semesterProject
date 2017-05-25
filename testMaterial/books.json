@@ -9,8 +9,8 @@
         "name": "Athens",
         "asciiname": "Athens",
         "loc":  [
-          23.7275,
-          37.9838
+          23.7333,
+          37.9833
         ]
       ,
         "countrycode": "GR"
@@ -39,8 +39,8 @@
         "name": "London",
         "asciiname": "London",
         "loc":  [
-          23.7275,
-          37.9838
+          -0.118092,
+          51.509865
         ]
       ,
         "countrycode": "UK"
@@ -49,8 +49,8 @@
         "name": "Cardiff",
         "asciiname": "Cardiff",
         "loc":  [
-          23.7275,
-          37.9838
+          -3.179090,
+          51.481583
         ]
       ,
         "countrycode": "UK"
@@ -59,8 +59,8 @@
         "name": "Manchester",
         "asciiname": "Manchester",
         "loc":  [
-          23.7275,
-          37.9838
+          -2.2426,
+          53.4808
         ]
       ,
         "countrycode": "UK"
@@ -78,8 +78,8 @@
         "name": "Athens",
         "asciiname": "Athens",
         "loc":  [
-          23.7275,
-          37.9838
+          23.7333,
+          37.9833
         ]
       ,
         "countrycode": "GR"
@@ -107,8 +107,8 @@
         "name": "Copenhagen",
         "asciiname": "Copenhagen",
         "loc":  [
-          22.93086,
-          40.64361
+          12.5683,
+          55.6761
         ]
       ,
         "countrycode": "DK"
@@ -117,8 +117,8 @@
         "name": "Mars",
         "asciiname": "Mars",
         "loc":  [
-          22.93086,
-          40.64361
+          157.8583,
+          21.3069
         ]
       ,
         "countrycode": "PL"

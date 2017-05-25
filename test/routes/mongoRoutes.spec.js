@@ -176,9 +176,9 @@ describe('MongoDB Routes Q1', function () {
   });
 
   describe('Query 4', () => {
-    it.skip('should return two books and four cities when given 22.93086, 40.64361 as coords', (done) => {
-      var coords = [55.17128, 25.0657];
-      var maxDistance = 1000000;
+    it.skip('should return two books when given 22.93086, 40.64361 as coords', (done) => {
+      var coords = [55.17128, 25.0657];//dubai
+      var maxDistance = 10000000;
       request
           .get(`/api/mongo/geolocate/${coords}/${maxDistance}`)
           .send({})
@@ -186,22 +186,21 @@ describe('MongoDB Routes Q1', function () {
           .end((err, res) => {
             console.log(res.body);
             var response = res.body;
-            response.cities.length.should.equal(5);
+            response.books.length.should.equal(2);
             done(err);
           });
     });
 
     it('should return no books or cities when given 17.750152, 142.501763 as coords', (done) => {
-      const coords = [17.750152, 142.501763];//the mariano trench!!
+      const coords = [17.7500, 142.5000];//the mariano trench!!
       const maxDistance = 10;
       request
           .get(`/api/mongo/geolocate/${coords}/${maxDistance}`)
           .send({})
-          .expect(200)
+          .expect(404)
           .end((err, res) => {
-            var response = res.body;
-            response.books.length.should.equal(0);
-            response.cities.length.should.equal(0);
+            const error = JSON.parse(res.error.text);
+            error.message.should.equal('No cities mentioned in books close to here.');
             done(err);
           });
     });

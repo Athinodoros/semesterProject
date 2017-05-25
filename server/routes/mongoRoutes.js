@@ -129,7 +129,7 @@ router.get('/geolocate/:coords/:maxDistance', (req, res) => {
 
   let cities = [];
   City.find({
-    loc: { $near: coords, $maxDistance: maxDistance },
+    loc: { $near: [coords[1], coords[0]], $maxDistance: maxDistance / 111.2 },
   }, { _id: 0, name: 1 }, (err, result) => {
     if (result === undefined) {
       return res.status(400).ngJSON({ message: 'The coordinates were invalid or missing.' });
@@ -139,12 +139,14 @@ router.get('/geolocate/:coords/:maxDistance', (req, res) => {
       cities = cities.concat(city.name);
     });
     Book.find({
-      cities: { $in: cities },
+      'cities.name': { $in: cities },
     }, { _id: 0, title: 1, author: 1 }, (err, books) => {
       if (err) {
         console.error(err);
-      } else {
-        res.status(200).ngJSON({ books: books, cities: cities });
+      }else if(books.length == 0) {
+        return res.status(404).ngJSON({ message: 'No cities mentioned in books close to here.' });
+      }else {
+        res.status(200).ngJSON({ books: books });
       }
 
     });
