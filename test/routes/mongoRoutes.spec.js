@@ -92,7 +92,7 @@ describe('MongoDB Routes Q1', function () {
   });
 
   describe('Query 2', () => {
-    it('should return Thessaloniki when test book three is entered', (done) => {
+    it('should return Athens when test book three is entered', (done) => {
       var book = 'test book three';
       request
           .get(`/api/mongo/titles/${book}`)
@@ -101,7 +101,7 @@ describe('MongoDB Routes Q1', function () {
           .end((err, res) => {
             const cityName = res.body.cities[0].name;
             const countrycode = res.body.cities[0].countrycode;
-            cityName.should.equal('Thessaloniki');
+            cityName.should.equal('Athens');
             countrycode.should.equal('GR');
             done(err);
           });
