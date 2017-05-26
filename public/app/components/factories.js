@@ -10,11 +10,11 @@
     }
 
     function getCitiesByBook(book) {
-      return $http.get(`/api/mongo/title/${book}`);
+      return $http.get(`/api/mongo/titles/${book}`);
     }
 
     function getBooksByAuthor(author) {
-      return $http.get(`/api/mongo/author/${author}`);
+      return $http.get(`/api/mongo/authors/${author}`);
     }
 
     function getBooksCloseTo(location, distance) {

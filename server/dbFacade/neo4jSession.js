@@ -26,11 +26,12 @@ function getBookByCityName(cityName) {
 
 function getCitiesByBookTitle(bookTitle) {
     const resultPromise = session.run(
-        'MATCH (book: Book {title: $bookTitle})-[:MENTIONS]->(city:City) RETURN city',
+        'MATCH (book: BOOK {title: $bookTitle})-[:MENTIONS]->(city:CITY) RETURN city',
         {bookTitle: bookTitle}
     );
     return resultPromise.then(result => {
         session.close();
+        console.log(result.records);
         return result.records.map(r => {
             return new City(r.get('city'))
         });
@@ -40,9 +41,8 @@ function getCitiesByBookTitle(bookTitle) {
         });
 };
 
+// insert all cities in neo4j database
 function setCities(city) {
-    console.log(city)
-    console.log("======================")
     const resultPromise = session.run(
         ' CREATE (city : CITY {name :$name ,  asciiname : $asciiname ,' +
         ' longitude : $longitude , latitude : $latitude ,' +
@@ -63,14 +63,12 @@ function setCities(city) {
         });
     })
         .catch((error) => {
-            console.log(error);
+            console.error("no cities: " + error);
         });
 };
 
-
+// function to insert book and relationship in neo4j database
 function setBooks(book) {
-    // console.log(city)
-    // console.log("======================")
     book.cities.forEach(function (city, cityIndex, mArray) {
 
         const resultPromise = session.run(
@@ -81,7 +79,7 @@ function setBooks(book) {
             ' author : $author ,' +
             ' release_date : $release_date ,' +
             ' language : $language  })' +
-            'MERGE (book)-[r:MENTIONS]->(a) RETURN r',
+            'MERGE (book)-[r:MENTIONS]->(a) RETURN book',
 
             {
                 filename: book.filename,
@@ -95,24 +93,22 @@ function setBooks(book) {
             }
         );
         return resultPromise.then(result => {
-            session.close();
             return result.records.map(r => {
-                return book; //new Book(r.get('title'))
+                return new Book(r.get('book'))
             });
+            session.close();
         })
             .catch((error) => {
-                console.log(error);
+                console.error(error);
             });
     })
-
-
 };
 
 
 function getBooksAndCitiesByAuthor(author) {
     const resultPromise = session.run(
-        'MATCH(b:Book {author: $author})-[:MENTIONS]->(c:City) ' +
-        'with b, collect({name:c.name, loc:c.loc}) as nodes ' +
+        'MATCH(b:BOOK {author: $author})-[:MENTIONS]->(c:CITY) ' +
+        'with b, collect({name:c.name, latitude:c.latitude, longitude: c.longitude}) as nodes ' +
         'with {title:b.title, cities: nodes} as containerNode ' +
         'return {books: collect(containerNode)}',
         {author: author}
@@ -127,6 +123,34 @@ function getBooksAndCitiesByAuthor(author) {
         });
 }
 
+function getBooksAndCitiesByCoordinates(coords, maxDistance) {
+    const resultPromise = session.run(
+        'MATCH (book:BOOK)-[:MENTIONS]->(city:CITY) ' +
+        'WITH  book, city, distance( point({ latitude: $latitude, longitude: $longitude }), ' +
+        'point({ latitude: city.latitude, longitude:city.longitude }) ) as dist ' +
+        'WHERE dist <= $maxDistance ' +
+        'with book, collect({name:city.name, latitude:city.latitude, longitude: city.longitude}) as nodes ' +
+        'with {title:book.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}',
+        {latitude: coords[0],
+         longitude: coords[1],
+        maxDistance: maxDistance}
+    );
+    return resultPromise.then(result => {
+        const booksAndCities = result.records[0]._fields[0];
+        return booksAndCities;
+        session.close();
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+/*const coords = [51.50853, -0.12574]
+getBooksAndCitiesByCoordinates(coords, 50*1000).then(result => {
+    console.log(result);
+});*/
+
+//deletes all nodes and relationships in neo4j database, use with care
 function dropNeo4j() {
     session.run(
         'MATCH (n) DETACH DELETE n'
@@ -146,4 +170,5 @@ module.exports = {
     getBooksAndCitiesByAuthor: getBooksAndCitiesByAuthor,
     addCities: setCities,
     addBooks: setBooks,
+    getBooksAndCitiesByCoordinates: getBooksAndCitiesByCoordinates
 }

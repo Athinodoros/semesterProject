@@ -20,11 +20,11 @@
             <button class="btn btn-info" ng-click="searchTitle()">Search</button>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div ng-repeat="city in cities">
-                <h5>"{{city.name}}",
+            <ul ng-repeat="city in cities">
+                <li><h5>"{{city.name}}",
                     <small>in country {{city.countrycode}}</small>
-                </h5>
-            </div>
+                </h5></li>
+            </ul>
             <ng-map ng-if="cities" id="map" zoom="1" center="current position">
                 <div ng-repeat="city in cities">
                     <marker position="{{city.loc[1]}},{{city.loc[0]}}" title="{{city.name}}"

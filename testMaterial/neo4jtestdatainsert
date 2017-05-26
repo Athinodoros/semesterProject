@@ -1,0 +1,21 @@
+LOAD CSV WITH HEADERS FROM "file:///testbooks.csv" AS csvLine
+CREATE (p:Book { filename: csvLine.filename, title: csvLine.title ,
+ author: csvLine.author, release_date: csvLine.release_date,
+ cities: csvLine.cities, language: csvLine.language })
+
+
+ LOAD CSV WITH HEADERS FROM "file:///testcities.csv" AS csvLine
+ CREATE (p:City { name: csvLine.name, asciiname: csvLine.asciiname ,
+ latitude: csvLine.latitude, longitude: csvLine.longitude,
+ countryCode: csvLine.countrycode })
+
+ WITH "file:///C:/Users/Athinodoros/Desktop/CphBusiness/semesterProject/server/utils/greatBookFileappender.json" as data
+ CALL apoc.load.json(data) YIELD value
+ UNWIND value.result as b
+  MATCH (a:CITY {name : b.cities.name, countryCode : b.cities.countryCode , longitude : b.cities.longitude})
+ MERGE (book:BOOK{filename : b.filename,
+ title : b.title,author : b.author,
+ release_date : b.release_date ,
+ language : b.language
+ })
+    MERGE (book)-[r:MENTIONS]->(a) RETURN r

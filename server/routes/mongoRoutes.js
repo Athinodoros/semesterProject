@@ -46,35 +46,20 @@ router.get('/books/:city', (req, res) => {
  * @apiSuccess {Array} An array of cities containing the latitude and longitude
  * @apiSuccess (Success 200) OK
  */
-router.get('/title/:book', (req, res) => {
-  const book = req.params.book;
+router.get('/titles/:book', (req, res) => {
+const book = req.params.book;
   let returnedCities = [];
   let returnedCodes = [];
   const query = Book.find({
     title: book
-  }, { _id: 0, cities: 1 }).exec();
+  }, { _id: 0, cities: 1}).exec();
   query.then(result => {
-    if (result[0] === undefined) {
-      return res.status(400).ngJSON({ message: 'The title was invalid or missing.' });
+    if(result[0] === undefined){
+      return res.status(400).ngJSON({message: 'The title was invalid or missing.'});
+    } else {
+      res.status(200).ngJSON({ cities: result[0].cities });
     }
-    result[0].cities.forEach(city => {
-      returnedCities = returnedCities.concat(city.name);
-      returnedCodes = returnedCodes.concat(city.countrycode);
-    });
-    let query1 = City.find({ name: { $in: returnedCities }, countrycode: { $in: returnedCodes} }, {
-      _id: 0,
-      name: 1,
-      loc: 1,
-      countrycode: 1,
-    }).exec();
-    query1.then(data => {
-      if (!data) {
-        res.status(204).end();
-      }  else {
-        res.status(200).ngJSON({ cities: data });
-      }
-    });
-  }).catch(reason => {
+  }).catch(reason =>{
     console.error(reason);
   });
 });
@@ -90,9 +75,9 @@ router.get('/title/:book', (req, res) => {
  * @apiSuccess {Array} An array of book titles and city names and coordinates
  * @apiSuccess (Success 200) OK
  */
-router.get('/author/:author', (req, res) => {
+router.get('/authors/:author', (req, res) => {
   const author = req.params.author;
-  if(author === 'undefined'){
+  if (author === 'undefined') {
     return res.status(400).ngJSON({ message: 'The author name was missing.' });
   }
   let cities = [];
@@ -101,8 +86,8 @@ router.get('/author/:author', (req, res) => {
   let citiesWithLoc = [];
   const query = Book.find({ author: author }, { _id: 0, title: 1, cities: 1 }).exec();
   query.then(data => {
-    if(data.length == 0) {
-      return res.status(404).ngJSON({ message: 'No books found by this author.'});
+    if (data.length == 0) {
+      return res.status(404).ngJSON({ message: 'No books found by this author.' });
     }
     data.forEach(book => {
       book.cities.forEach(city => {
@@ -111,7 +96,12 @@ router.get('/author/:author', (req, res) => {
       });
       titles = titles.concat(book.title);
     });
-    let query1 = City.find({ name: { $in: cities }, countrycode: {$in: countryCodes} }, { _id: 0, name: 1, loc: 1, countrycode: 1 }).exec();
+    const query1 = City.find({ name: { $in: cities }, countrycode: { $in: countryCodes } }, {
+      _id: 0,
+      name: 1,
+      loc: 1,
+      countrycode: 1
+    }).exec();
     query1.then(data => {
       citiesWithLoc.push(data);
       res.status(200).ngJSON({ titles: titles, cities: citiesWithLoc });
@@ -137,24 +127,26 @@ router.get('/geolocate/:coords/:maxDistance', (req, res) => {
   const coords = req.params.coords.split(',');
   const maxDistance = req.params.maxDistance;
 
-  var cities = [];
+  let cities = [];
   City.find({
-    loc: { $near: coords, $maxDistance: maxDistance },
+    loc: { $near: [coords[1], coords[0]], $maxDistance: maxDistance / 111.2 },
   }, { _id: 0, name: 1 }, (err, result) => {
     if (result === undefined) {
-      return res.status(400).ngJSON({ message: 'The coords were invalid or missing.' });
+      return res.status(400).ngJSON({ message: 'The coordinates were invalid or missing.' });
     }
 
     result.forEach(city => {
       cities = cities.concat(city.name);
     });
     Book.find({
-      cities: { $in: cities },
+      'cities.name': { $in: cities },
     }, { _id: 0, title: 1, author: 1 }, (err, books) => {
       if (err) {
         console.error(err);
-      } else {
-        res.status(200).ngJSON({ books: books, cities: cities });
+      }else if(books.length == 0) {
+        return res.status(404).ngJSON({ message: 'No cities mentioned in books close to here.' });
+      }else {
+        res.status(200).ngJSON({ books: books });
       }
 
     });

@@ -4,6 +4,8 @@
 # semesterProject
 CphBusiness Semester Project
 
+- LINK TO REPORT: https://docs.google.com/document/d/16iIwkktVjNUTk9_2rvSnXQh9W5XKyvjCbxcCTnw8UF4/edit?usp=sharing 
+
 Start by cloning the project using the `git clone <project>` command in your requested folder.
 Move into the root folder of the project, and run in the terminal:
 
@@ -22,17 +24,22 @@ Move into the root folder of the project, and run in the terminal:
 
 Neo4J
 
-Q1: match (b:Book)-[:mentions]->(c:City {name: "New York"}) return b.title, b.author;
+Q1: 'MATCH (book: BOOK)-[:MENTIONS]->(c:CITY {name: $cityName}) RETURN book';
 
-Q2: match (b:Book {title: "Harry Potter"})-[:mentions]->(c:City) return c.name, c.geolocation;
+Q2: 'MATCH (book: BOOK {title: $bookTitle})-[:MENTIONS]->(city:CITY) RETURN city';
 
-Q3: match (b:Book {author: "John Grisham"})-[:mentions]->(c:City) return b.title, c.name, c.geolocation; (**NOTE: distinct the results**)
+Q3:  'MATCH(b:BOOK {author: $author})-[:MENTIONS]->(c:CITY) ' +
+        'with b, collect({name:c.name, latitude:c.latitude, longitude: c.longitude}) as nodes ' +
+        'with {title:b.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}';
 
-Q4: match (b:Book)-[:mentions]->(c:City {geolocation: [1.234, 5.678]}) return b.title;
-#
-Query 4 HINT: (https://neo4j.com/blog/neo4j-spatial-part1-finding-things-close-to-other-things/)
-
-#
+Q4: 'MATCH (book:BOOK)-[:MENTIONS]->(city:CITY) ' +
+        'WITH  book, city, distance( point({ latitude: $latitude, longitude: $longitude }), ' +
+        'point({ latitude: city.latitude, longitude:city.longitude }) ) as dist ' +
+        'WHERE dist <= $maxDistance ' +
+        'with book, collect({name:city.name, latitude:city.latitude, longitude: city.longitude}) as nodes ' +
+        'with {title:book.title, cities: nodes} as containerNode ' +
+        'return {books: collect(containerNode)}';
 
 MongoDB
 

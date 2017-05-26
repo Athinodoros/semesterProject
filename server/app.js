@@ -7,7 +7,6 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import './modules/ngJSON';
-import * as facade from './dbFacade/facade';
 import * as connector from './connector/connector';
 import * as neo4jSession from './dbFacade/neo4jSession';
 // import routes from './routes/index';
@@ -17,23 +16,16 @@ import neo4jRoutes from './routes/neo4jRoutes';
 import importer from './utils/bookImporter';
 
 
-// neo4jSession.getCitiesByBookTitle("Bible");
 //neo4jSession.getBooksAndCitiesByAuthor("Nos");
-// importer.allBooks();
-importer.addAllCities();
+
+//importer.allBooks();
 const app = express();
 
 
 
 connector.getdb('awesome')
     .then(dbin => {
-      facade.conf(dbin);
-
-      facade.findOne('testdb', { name: "Thessaloniki" }).then(function (data) {
-        console.log("data");
-        console.log(data);
-        data.should.equal()
-      });
+     console.log('connected');
     });
 
 app.set('views', path.join(__dirname, 'views'));

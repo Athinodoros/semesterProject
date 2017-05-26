@@ -6,6 +6,7 @@
     'ngRoute',
     'ui.bootstrap',
     'ngMap',
+    'rzModule',
     'awesome.directives',
     'awesome.factories',
     'awesome.filters',
