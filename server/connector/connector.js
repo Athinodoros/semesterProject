@@ -53,7 +53,7 @@ function getdb(databaseName) {
 }
 
 function getNewdb(databaseName) {
-    console.log('Node Env :' ,process.env.NODE_ENV);
+    console.log('Node Env :', process.env.NODE_ENV);
     if (process.env.NODE_ENV == 'production') {
         return new Promise(function (fulfill, reject) {
 
@@ -62,12 +62,19 @@ function getNewdb(databaseName) {
                 if (server) {
                     if (!databaseName) throw new Error("the db name was not spesified");
 
-                    var connectionString = "mongodb://localhost:27000/" + databaseName;
+                    var connectionString = "mongodb://127.0.0.1:27000/" + databaseName;
                     console.log(connectionString);
                     mongoose.Promise = global.Promise;
-                    mongoose.connect(connectionString, function (err, res) {
+                    mongoose.connect(connectionString, {
+                        server: {
+                            poolSize: 50,
+                            socketOptions: {
+                                socketTimeoutMS: 0,
+                                connectTimeoutMS: 0
+                            }
+                        }
+                    }, function (err, res) {
                         if (err) {
-
                             console.log("error");
                             console.log(err);
                             reject(err);

@@ -17,6 +17,7 @@ import importer from './utils/bookImporter';
 
 
 //neo4jSession.getBooksAndCitiesByAuthor("Nos");
+
 //importer.allBooks();
 const app = express();
 
