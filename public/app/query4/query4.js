@@ -8,7 +8,17 @@
           controller: 'query4Ctrl'
         });
       })
-      .controller('query4Ctrl', function ($scope, api, $http) {
-
+      .controller('query4Ctrl', function ($scope, api) {
+        $scope.distanceSlider = 50;
+        $scope.searchGeolocation = () => {
+          const geoLoc = [
+              $scope.longitude,
+              $scope.latitude
+          ];
+          api.getBooksCloseTo(geoLoc, $scope.distanceSlider)
+              .then(data => {
+                console.log(data);
+              });
+        }
       });
 }());

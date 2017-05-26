@@ -95,7 +95,8 @@ gulp.task('dev:env', () => {
 });
 
 gulp.task('mocha:coverage', ['clean:coverage'], () => {
-  return gulp.src(['server/**/*.js', '!server/dbFacade/facade.js', '!server/connector/connector.js'])
+  return gulp.src(['server/**/*.js', '!server/connector/connector.js', '!server/routes/neo4jRoutes.js', '!server/utils/*.js',
+  '!server/dbFacade/neo4jSession.js', '!server/models/neo4jBook.js', '!server/models/neo4jCity.js'])
       .pipe(istanbul())
       .pipe(istanbul.hookRequire())
       .pipe(gulp.dest('coverage/'));
@@ -109,7 +110,20 @@ gulp.task('test:codecov', () => {
 });
 
 gulp.task('test:mocha', ['mocha:env', 'mocha:coverage'], () => {
-  return gulp.src('test/**/*.js', { read: false })
+  return gulp.src(['test/**/*.js', '!test/client-side/selenium.js'], { read: false })
+      .pipe(mocha({
+        reporter: 'spec',
+        ui: 'bdd',
+        timeout: 4000,
+      }))
+      .pipe(istanbul.writeReports())
+      .pipe(istanbul.enforceThresholds({thresholds:{ functions: 50 } }))
+      .once('error', () => process.exit(1))
+      .once('end', () => process.exit());
+});
+
+gulp.task('test:selenium', ['mocha:env', 'mocha:coverage'], () => {
+  return gulp.src('test/client-side/selenium.js', { read: false })
       .pipe(mocha({
         reporter: 'spec',
         ui: 'bdd',

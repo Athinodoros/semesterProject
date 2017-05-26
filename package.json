@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./dist/bin/www.js",
     "test": "cross-env NODE_ENV=test gulp test:mocha",
-    "dev": "cross-env NODE_ENV=test nodemon ./dist/bin/www.js"
+    "dev": "cross-env NODE_ENV=test nodemon ./dist/bin/www.js",
+    "pre-commit": "npm test"
   },
   "cacheDirectories": [
     "node_modules",
@@ -41,13 +42,16 @@
     "hbs": "~4.0.1",
     "husky": "^0.13.3",
     "istanbul": "^0.4.5",
+    "js-mock": "^1.0.0",
     "json2csv": "3.7.3",
     "mocha": "^3.3.0",
     "mongodb": "^2.2.26",
     "mongoose": "4.9.8",
+    "mongoose-mock": "0.4.0",
     "morgan": "~1.7.0",
     "neo4j-driver": "^1.3.0",
     "promise": "^7.1.1",
+    "proxyquire": "1.8.0",
     "run-sequence": "1.2.2",
     "serve-favicon": "~2.3.2",
     "sinon": "^2.2.0",
@@ -60,6 +64,7 @@
     "babel-preset-stage-3": "6.16.0",
     "babel-register": "6.16.0",
     "babel-runtime": "6.11.6",
+    "chromedriver": "2.29.0",
     "codecov.io": "^0.1.6",
     "coveralls": "^2.13.1",
     "cross-env": "5.0.0",
@@ -86,6 +91,7 @@
     "gulp-util": "3.0.7",
     "is-empty": "1.2.0",
     "nyc": "^10.3.2",
+    "selenium-webdriver": "3.0.0-beta-2",
     "should": "8.3.1",
     "supertest": "3.0.0"
   }

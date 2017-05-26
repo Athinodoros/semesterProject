@@ -21,7 +21,10 @@ const BookSchema = new Schema({
     required: false
   },
   cities: {
-    type: [String],
+    type: [{
+      type: mongoose.Schema.Types.Object,
+      ref: 'City'
+    }],
     required: false
   },
   language: {
