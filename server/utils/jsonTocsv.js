@@ -1,13 +1,13 @@
 'use strict';
 
 var json2csv = require('json2csv');
-var fields = ['filename', 'title', 'author', 'release_date', 'cities', 'language'];
+var fields = ['name', 'asciiname', 'loc', 'countrycode'];
 var fs = require('fs');
 
-var books = require('../testMaterial/cities.json');
+var books = require('../../testMaterial/cities.json');
 try {
   var result = json2csv({ data: books, fields: fields });
-  fs.writeFile('file.csv', result, function(err) {
+  fs.writeFile('testcities.csv', result, function(err) {
     if (err) throw err;
     console.log('file saved');
   });

@@ -95,7 +95,8 @@ gulp.task('dev:env', () => {
 });
 
 gulp.task('mocha:coverage', ['clean:coverage'], () => {
-  return gulp.src(['server/**/*.js', '!server/dbFacade/facade.js', '!server/connector/connector.js'])
+  return gulp.src(['server/**/*.js', '!server/connector/connector.js', '!server/routes/neo4jRoutes.js', '!server/utils/*.js',
+  '!server/dbFacade/neo4jSession.js', '!server/models/neo4jBook.js', '!server/models/neo4jCity.js'])
       .pipe(istanbul())
       .pipe(istanbul.hookRequire())
       .pipe(gulp.dest('coverage/'));
