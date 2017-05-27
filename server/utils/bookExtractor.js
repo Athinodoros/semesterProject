@@ -4,27 +4,23 @@
 var extractor = require('./cityNameTrimer');
 var path = require('path'), fs = require('fs');
 
-var outputFile = "bookContent.csv";
+
 var headers = "filename\ttitle\tauthor\trelease_date\tcities\tlanguage\n";
-fs.unlink(outputFile)
-fs.appendFileSync(outputFile, headers)
+
+var flag = 0;
 var startDate = new Date();
-var citiesList = [];
 var oldTime = "";
-var citiesFile = fs.readFileSync('./../citiesEXT.csv');
-citiesFile.toString().split('\n').forEach(function (line, index) {
-    if (index > 0) {
-        var items = line.split('\t');
-        if (items[0])
-            citiesList.push(items[0])
-        if (items[1] && items[0] !== items[1])
-            citiesList.push(items[1])
-    }
-})
+
 
 var booksDone = 0;
 
-function fromDir(startPath, filter) {
+function fromDir(startPath, filter, outputFile, citiesIn) {
+
+    // console.log("setting headers")
+    // if (fs.existsSync(outputFile))
+
+
+    fs.writeFileSync(outputFile, headers);
 
 
     if (!fs.existsSync(startPath)) {
@@ -50,10 +46,10 @@ function fromDir(startPath, filter) {
             extracts = extractor.extractor(text.toString());
 
             extracts.forEach(function (posCity) {
-                if (citiesList.indexOf(posCity) >= 0 && cities.indexOf(posCity) == -1) {
+                if (citiesIn.indexOf(posCity) >= 0 && cities.indexOf(posCity) == -1) {
                     cities.push(posCity);
                 }
-            })
+            });
             text.toString().split('\n').forEach(function (item) {
                 if (!title)
                     if (item.indexOf("Title:") >= 0) {
@@ -88,15 +84,19 @@ function fromDir(startPath, filter) {
         var secElapsed = (endDate - startDate) / 1000;
         // console.log("--------------");
         // console.log( secElapsed);
-        var timeToReport = ((secElapsed < 60) ? "00:" + ((Math.floor(secElapsed, 3) < 10) ? (0 + "" + Math.floor(secElapsed, 3)) :Math.floor(secElapsed, 3)):// <----------secs only
+        var timeToReport = ((secElapsed < 60) ? "00:" + ((Math.floor(secElapsed, 3) < 10) ? (0 + "" + Math.floor(secElapsed, 3)) : Math.floor(secElapsed, 3)) :// <----------secs only
                 //mins ---------->
-            ((Math.floor(secElapsed / 60, 0)<10)?0+""+Math.floor(secElapsed / 60, 0):Math.floor(secElapsed / 60, 0)) + ":" + ((secElapsed % 60 < 10) ? 0 + "" + Math.floor(secElapsed % 60) : Math.floor(secElapsed % 60)))+ " "+ ++booksDone;
+                ((Math.floor(secElapsed / 60, 0) < 10) ? 0 + "" + Math.floor(secElapsed / 60, 0) : Math.floor(secElapsed / 60, 0)) + ":" + ((secElapsed % 60 < 10) ? 0 + "" + Math.floor(secElapsed % 60) : Math.floor(secElapsed % 60))) + " " + ++booksDone;
         if (timeToReport != oldTime) {
-            console.log(timeToReport);
+            // console.log(timeToReport);
             oldTime = timeToReport;
         }
         // console.log("--------------");
-    };
+    }
+    ;
 
 };
-fromDir('./books', '.txt');
+// fromDir('./books', '.txt');
+module.exports = {
+    readToCsvFrom: fromDir
+}

@@ -1,0 +1,561 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1495775290596,2013,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,4,0,0,2013
+1495775290596,2014,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,4,0,0,2014
+1495775290605,2005,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test GEO 4-1,text,false,,2204,0,1,4,0,0,2005
+1495775290599,2011,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,4,0,0,2011
+1495775292612,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,4,0,0,2002
+1495775292613,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,4,0,0,2001
+1495775292614,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test GEO 4-1,text,false,,2204,0,1,4,0,0,2001
+1495775292615,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,4,0,0,2000
+1495775294615,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,2,8,0,0,2002
+1495775294616,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,2,8,0,0,2001
+1495775294616,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test GEO 4-1,text,false,,2204,0,2,8,0,0,2001
+1495775294616,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,2,8,0,0,2001
+1495775296597,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-2,text,false,,2204,0,2,8,0,0,2000
+1495775296599,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-2,text,false,,2204,0,2,7,0,0,2000
+1495775296597,2003,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-2,text,false,,2204,0,2,7,0,0,2003
+1495775296609,1998,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test GEO 4-2,text,false,,2204,0,2,5,0,0,1998
+1495775296618,1999,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,4,0,0,1999
+1495775296618,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test GEO 4-1,text,false,,2204,0,1,4,0,0,2001
+1495775296618,1999,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,2,0,0,1999
+1495775296619,1998,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,2,0,0,1998
+1495776436425,31,HTTP Request,200,OK,mongo  test GEO 4-1,text,true,,3110,211,1,4,31,0,3
+1495776436457,6,HTTP Request,200,OK,mongo  test GEO 4-1,text,true,,3110,211,1,4,6,0,0
+1495776436463,4,HTTP Request,200,OK,mongo  test GEO 4-1,text,true,,3110,211,1,4,4,0,0
+1495776436468,2,HTTP Request,200,OK,mongo  test GEO 4-1,text,true,,3110,211,1,4,2,0,0
+1495776436471,2,HTTP Request,200,OK,mongo  test GEO 4-1,text,true,,3110,211,1,4,2,0,0
+1495776436417,2057,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,2056,0,5
+1495776438476,133,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,133,0,0
+1495776438610,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,33,0,0
+1495776436419,2329,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,2329,0,2
+1495776438644,105,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,105,0,0
+1495776436418,2340,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,3,2329,0,3
+1495776438749,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,39,0,0
+1495776438749,43,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,2,43,0,1
+1495776438792,45,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,2,45,0,0
+1495776438837,88,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,88,0,0
+1495776438926,633,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,633,0,0
+1495776438759,1741,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1741,0,2
+1495776440501,1021,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1019,0,0
+1495776441524,942,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,2,2,907,0,1
+1495776442417,998,HTTP Request,200,OK,mongo  test books 3-2,text,true,,285920,209,1,1,990,0,1
+1495777236503,21,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,21,0,1
+1495777236525,6,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,6,0,0
+1495777236531,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,5,0,0
+1495777236536,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,4,0,0
+1495777236541,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,3,0,0
+1495777236500,49,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,49,0,3
+1495777236501,103,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,103,0,2
+1495777236550,85,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,85,0,0
+1495777236605,34,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,34,0,0
+1495777236635,31,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,30,0,0
+1495777236639,47,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,47,0,0
+1495777236666,30,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,30,0,0
+1495777236696,63,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,63,0,0
+1495777236686,75,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,75,0,0
+1495777236761,764,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,764,0,0
+1495777236502,1650,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1640,0,2
+1495777238152,1057,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1057,0,0
+1495777239210,1021,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1016,0,1
+1495777240231,896,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,886,0,0
+1495777241125,985,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,984,0,0
+1495777299818,22,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,22,0,2
+1495777299842,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,3,0,0
+1495777299845,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,3,0,0
+1495777299848,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,3,0,0
+1495777299852,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,3,0,0
+1495777299805,58,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,58,0,4
+1495777299863,61,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,61,0,0
+1495777299808,117,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,117,0,1
+1495777299924,30,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,30,0,0
+1495777299926,31,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,31,0,0
+1495777299957,38,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,38,0,0
+1495777299954,42,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,42,0,0
+1495777299997,29,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,28,0,0
+1495777299996,70,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,70,0,0
+1495777300066,742,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,742,0,0
+1495777299825,1564,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1555,0,1
+1495777301390,1016,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1014,0,0
+1495777302406,1040,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1038,0,1
+1495777303447,923,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,912,0,0
+1495777304370,962,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,960,0,0
+1495777689840,16,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,16,0,1
+1495777689856,16,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,16,0,0
+1495777689873,6,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,228,1,4,6,0,0
+1495777689879,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,229,1,4,5,0,0
+1495777689831,57,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,57,0,4
+1495777689884,54,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,230,1,4,54,0,0
+1495777689835,106,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,106,0,2
+1495777689889,82,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,82,0,0
+1495777689941,36,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,36,0,0
+1495777689972,38,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,38,0,0
+1495777689977,53,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,53,0,0
+1495777690011,42,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,42,0,0
+1495777690054,56,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,55,0,0
+1495777690030,80,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,3,80,0,0
+1495777690111,741,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,741,0,0
+1495777689839,1598,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1589,0,2
+1495777691437,1014,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1012,0,0
+1495777692452,1012,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1009,0,1
+1495777693465,895,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,884,0,0
+1495777694360,992,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,991,0,0
+1495777708432,10,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,10,0,2
+1495777708443,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,4,0,0
+1495777708447,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,228,1,4,3,0,0
+1495777708451,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,229,1,4,4,0,0
+1495777708455,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,230,1,4,4,0,0
+1495777708429,49,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,48,0,2
+1495777708430,125,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,125,0,1
+1495777708479,121,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,121,0,0
+1495777708556,54,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,54,0,0
+1495777708600,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,39,0,0
+1495777708610,44,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,44,0,0
+1495777708639,48,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,48,0,0
+1495777708688,64,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,64,0,0
+1495777708654,98,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,3,98,0,0
+1495777708752,673,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,673,0,0
+1495777708430,1579,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1569,0,2
+1495777710009,1015,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1014,0,0
+1495777711023,1012,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1011,0,1
+1495777712035,916,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,894,0,0
+1495777712951,1050,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,1049,0,0
+1495777775604,43,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,43,0,1
+1495777775648,7,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,7,0,0
+1495777775593,73,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,72,0,6
+1495777775655,19,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,228,1,4,19,0,0
+1495777775674,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,229,1,4,5,0,0
+1495777775667,87,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,4,87,0,0
+1495777775603,154,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,4,154,0,1
+1495777775680,79,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,230,1,4,79,0,0
+1495777775755,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,34,0,0
+1495777775757,35,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,34,0,0
+1495777775789,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,34,0,0
+1495777775792,46,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,46,0,0
+1495777775824,44,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,44,0,0
+1495777775839,79,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,79,0,0
+1495777775919,715,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,715,0,0
+1495777775598,1620,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1619,0,1
+1495777777219,1052,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1051,0,0
+1495777778271,1001,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,999,0,1
+1495777779273,858,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,851,0,0
+1495777780132,963,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,961,0,0
+1495777827683,42,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,42,0,2
+1495777827725,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,4,0,0
+1495777827729,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,5,0,0
+1495777827734,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,3,0,0
+1495777827738,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,5,0,0
+1495777827675,83,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,83,0,10
+1495777827759,56,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,56,0,0
+1495777827677,143,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,143,0,9
+1495777827815,41,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,41,0,0
+1495777827822,45,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,45,0,0
+1495777827857,43,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,43,0,0
+1495777827867,55,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,55,0,0
+1495777827900,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,39,0,0
+1495777827922,86,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,86,0,0
+1495777828008,853,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,853,0,0
+1495777827679,1798,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1793,0,7
+1495777829477,1049,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1049,0,0
+1495777830526,1021,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1020,0,2
+1495777831547,938,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,931,0,0
+1495777832485,988,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,986,0,0
+1495777840349,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,5,0,1
+1495777840354,6,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,6,0,0
+1495777840318,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,39,0,1
+1495777840361,9,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,9,0,0
+1495777840363,71,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,4,71,0,0
+1495777840319,116,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,4,116,0,1
+1495777840370,66,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,66,0,0
+1495777840436,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,4,0,0
+1495777840435,30,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,30,0,0
+1495777840436,38,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,38,0,0
+1495777840466,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,34,0,0
+1495777840475,58,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,58,0,0
+1495777840500,40,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,39,0,0
+1495777840534,113,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,113,0,0
+1495777840647,712,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,712,0,0
+1495777840340,1606,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1604,0,1
+1495777841947,1016,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1016,0,0
+1495777842963,1039,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1038,0,1
+1495777844002,977,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,971,0,0
+1495777844980,1021,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,1020,0,0
+1495777969122,49,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,49,0,2
+1495777969164,85,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,85,0,2
+1495777969171,80,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,4,80,0,0
+1495777969126,127,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,4,127,0,1
+1495777969250,10,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,10,0,0
+1495777969260,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,5,0,0
+1495777969266,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,5,0,0
+1495777969272,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,3,0,0
+1495777969251,49,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,49,0,0
+1495777969253,52,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,52,0,0
+1495777969300,44,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,44,0,0
+1495777969306,53,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,53,0,0
+1495777969344,41,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,41,0,0
+1495777969360,91,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,91,0,0
+1495777969451,825,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,825,0,0
+1495777969125,1769,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1765,0,2
+1495777970894,1034,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1034,0,0
+1495777971929,1005,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1005,0,0
+1495777972935,962,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,956,0,0
+1495777973898,976,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,972,0,0
+1495777996478,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,2,5,0,1
+1495777996483,8,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,3,8,0,0
+1495777996468,43,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,43,0,3
+1495777996492,22,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,22,0,0
+1495777996514,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,4,0,0
+1495777996518,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,5,0,0
+1495777996512,43,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,43,0,0
+1495777996494,132,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,132,0,1
+1495777996555,71,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,69,0,0
+1495777996626,37,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,37,0,0
+1495777996626,40,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,40,0,0
+1495777996664,50,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,50,0,0
+1495777996667,48,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,2,48,0,0
+1495777996715,83,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,83,0,0
+1495777996799,708,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,708,0,0
+1495777996485,1611,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1604,0,4
+1495777998097,1015,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1015,0,0
+1495777999112,1020,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1016,0,1
+1495778000132,887,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,878,0,0
+1495778001019,976,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,973,0,0
+1495778591108,40,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,40,0,2
+1495778591148,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,5,0,0
+1495778591153,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,5,0,0
+1495778591101,141,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,4,140,0,2
+1495778591158,86,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,86,0,0
+1495778591102,143,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,4,143,0,1
+1495778591245,7,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,7,0,0
+1495778591242,43,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,43,0,0
+1495778591245,40,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,40,0,0
+1495778591285,49,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,49,0,0
+1495778591285,49,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,49,0,0
+1495778591334,30,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,30,0,0
+1495778591365,53,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,53,0,0
+1495778591334,85,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,85,0,0
+1495778591420,634,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,634,0,0
+1495778591105,1542,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1540,0,2
+1495778592647,1007,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1007,0,0
+1495778593654,1006,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1005,0,1
+1495778594660,885,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,878,0,0
+1495778595545,965,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,964,0,0
+1495778625664,6,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,6,0,1
+1495778625670,8,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,8,0,0
+1495778625678,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,4,0,0
+1495778625682,7,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,7,0,0
+1495778625689,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,5,0,0
+1495778625655,158,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,158,0,16
+1495778625657,159,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,159,0,4
+1495778625814,35,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,35,0,0
+1495778625818,34,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,34,0,0
+1495778625850,36,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,36,0,0
+1495778625853,55,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,55,0,0
+1495778625886,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,34,0,0
+1495778625920,103,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,103,0,0
+1495778625909,115,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,115,0,0
+1495778626024,741,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,741,0,0
+1495778625659,1694,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1692,0,0
+1495778627354,1054,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1053,0,0
+1495778628408,1054,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,1053,0,1
+1495778629462,1055,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,1046,0,0
+1495778630517,1016,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,1014,0,1
+1495780826782,8,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,4,8,0,1
+1495780826790,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,4,5,0,0
+1495780826795,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,4,4,0,0
+1495780826800,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,4,3,0,0
+1495780826803,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,4,3,0,0
+1495780826772,54,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,54,0,5
+1495780826827,61,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,3,61,0,0
+1495780826774,116,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,3,116,0,4
+1495780826889,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,3,39,0,0
+1495780826891,39,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,3,39,0,0
+1495780826929,35,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,3,35,0,0
+1495780826930,56,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,3,56,0,0
+1495780826965,39,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,39,0,0
+1495780826986,81,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,81,0,0
+1495780827067,746,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,746,0,0
+1495780826773,1680,HTTP Request,200,OK,mongo  test books 3-1,text,true,,339982,205,1,1,1677,0,6
+1495780828453,1014,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,1012,0,0
+1495780829467,994,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129225,209,1,1,994,0,1
+1495780830462,965,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338034,205,1,1,954,0,0
+1495780831428,973,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285920,209,1,1,970,0,0
+1495795294281,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,4,0,0,0
+1495795294283,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,4,0,0,0
+1495795294283,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,4,0,0,0
+1495795294284,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,4,0,0,0
+1495795294284,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,4,0,0,0
+1495795294266,2011,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,3,0,0,2011
+1495795294266,2013,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,3,0,0,2013
+1495795294279,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,3,0,0,2000
+1495795296280,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,3,0,0,2000
+1495795296279,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,3,0,0,2002
+1495795296280,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,3,0,0,2001
+1495795298282,1995,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,2,6,0,0,1995
+1495795298283,2000,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,2,6,0,0,2000
+1495795298281,2005,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,2,6,0,0,2005
+1495795300268,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-2,text,false,,2204,0,2,6,0,0,2002
+1495795300266,2005,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-2,text,false,,2204,0,2,5,0,0,2005
+1495795300278,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,4,0,0,2001
+1495795300276,2004,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-2,text,false,,2204,0,2,3,0,0,2003
+1495795300287,2003,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,2,0,0,2003
+1495795300284,2007,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,1,0,0,2006
+1495795341426,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,4,0,0,0
+1495795341428,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,4,0,0,0
+1495795341428,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,4,0,0,0
+1495795341429,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,4,0,0,0
+1495795341429,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,4,0,0,0
+1495795341424,2004,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,3,0,0,2004
+1495795341424,2003,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,3,0,0,2003
+1495795341425,2011,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,3,0,0,2011
+1495795343430,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,3,0,0,2002
+1495795343430,2005,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,3,0,0,2005
+1495795343438,2007,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,3,0,0,2007
+1495795345433,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,2,6,0,0,2002
+1495795345438,2008,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,2,6,0,0,2008
+1495795345447,2009,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,2,6,0,0,2009
+1495795347428,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-2,text,false,,2204,0,2,6,0,0,2001
+1495795347428,2001,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-2,text,false,,2204,0,2,6,0,0,2001
+1495795347424,2005,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-2,text,false,,2204,0,2,4,0,0,2005
+1495795347436,2004,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test title 1-1,text,false,,2204,0,1,3,0,0,2004
+1495795347447,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test author 2-1,text,false,,2204,0,1,2,0,0,2002
+1495795347458,2002,HTTP Request,Non HTTP response code: java.net.ConnectException,Non HTTP response message: Connection refused: connect,mongo  test books 3-1,text,false,,2204,0,1,1,0,0,2002
+1495795446825,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,4,0,0,0
+1495795446825,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,4,0,0,0
+1495795446825,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,4,0,0,0
+1495795446826,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,4,0,0,0
+1495795446827,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,4,0,0,0
+1495795446820,62,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,222,1,3,62,0,6
+1495795446822,70,HTTP Request,200,OK,mongo  test books 3-1,text,true,,326,205,1,3,70,0,4
+1495795446818,76,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,218,1,3,76,0,13
+1495795446883,16,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,225,1,3,16,0,0
+1495795446894,8,HTTP Request,400,Bad Request,mongo  test books 3-1,text,false,,267,203,1,3,8,0,0
+1495795446895,7,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,220,1,3,7,0,0
+1495795446900,5,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,223,1,3,5,0,0
+1495795446902,8,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,215,1,3,8,0,0
+1495795446902,8,HTTP Request,200,OK,mongo  test books 3-1,text,true,,273,209,1,3,8,0,0
+1495795446906,6,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,219,1,3,6,0,0
+1495795446910,10,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,235,1,3,10,0,0
+1495795446911,10,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,205,1,3,10,0,0
+1495795446912,13,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,221,1,3,13,0,0
+1495795446921,10,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,238,1,2,10,0,0
+1495795446921,12,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,209,1,1,12,0,0
+1495796147172,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,5,0,0,0
+1495796147174,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,5,0,0,0
+1495796147175,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,5,0,0,0
+1495796147176,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,6,0,0,0
+1495796147176,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,6,0,0,0
+1495796147170,36,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,218,1,7,36,0,2
+1495796147174,41,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,41,0,1
+1495796147176,41,HTTP Request,200,OK,mongo  test title 6-1,text,true,,3110,215,1,5,41,0,3
+1495796147180,39,HTTP Request,200,OK,mongo  test title 8-1,text,true,,3110,235,1,4,39,0,1
+1495796147180,39,HTTP Request,200,OK,mongo  test title 7-1,text,true,,3110,238,1,3,39,0,1
+1495796147171,55,HTTP Request,200,OK,mongo  test books 3-1,text,true,,326,205,1,2,55,0,1
+1495796147170,57,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,222,1,2,57,0,5
+1495796147226,5,HTTP Request,400,Bad Request,mongo  test books 3-1,text,false,,267,203,1,2,5,0,0
+1495796147227,4,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,225,1,2,4,0,0
+1495796147231,3,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,223,1,2,3,0,0
+1495796147231,4,HTTP Request,200,OK,mongo  test books 3-1,text,true,,273,209,1,2,4,0,0
+1495796147235,6,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,219,1,2,6,0,0
+1495796147235,8,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,205,1,2,8,0,0
+1495796147241,7,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,221,1,2,7,0,0
+1495796147243,9,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,209,1,1,9,0,0
+1495796192186,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,4,0,0,0
+1495796192186,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,4,0,0,0
+1495796192188,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,5,0,0,0
+1495796192189,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,5,0,0,0
+1495796192189,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,5,0,0,0
+1495796192182,17,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,218,1,7,17,0,2
+1495796192183,16,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,222,1,7,16,0,1
+1495796192184,22,HTTP Request,200,OK,mongo  test books 3-1,text,true,,326,205,1,6,22,0,0
+1495796192188,23,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,23,0,1
+1495796192199,13,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,225,1,5,13,0,0
+1495796192190,22,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,215,1,5,22,0,1
+1495796192193,21,HTTP Request,200,OK,neo4j  test title 7-1,text,true,,3110,235,1,4,21,0,1
+1495796192195,20,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,238,1,3,20,0,1
+1495796192207,11,HTTP Request,400,Bad Request,mongo  test books 3-1,text,false,,267,203,1,2,11,0,0
+1495796192212,8,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,223,1,2,8,0,0
+1495796192218,8,HTTP Request,200,OK,mongo  test books 3-1,text,true,,273,209,1,2,8,0,0
+1495796192221,8,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,219,1,2,8,0,0
+1495796192226,5,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,205,1,2,5,0,0
+1495796192229,3,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,221,1,2,3,0,0
+1495796192231,5,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,209,1,1,5,0,0
+1495796233470,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,8,0,0,0
+1495796233472,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,8,0,0,0
+1495796233472,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,8,0,0,0
+1495796233474,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,8,0,0,0
+1495796233475,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,8,0,0,0
+1495796233462,26,HTTP Request,400,Bad Request,mongo  test title 1-1,text,false,,268,218,1,7,26,0,8
+1495796233472,18,HTTP Request,200,OK,mongo  test books 3-1,text,true,,326,205,1,7,18,0,0
+1495796233466,25,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,222,1,7,25,0,6
+1495796233470,21,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,21,0,1
+1495796233471,20,HTTP Request,200,OK,neo4j  test title 7-1,text,true,,3110,235,1,6,20,0,0
+1495796233472,19,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,238,1,6,19,0,0
+1495796233470,24,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,215,1,3,24,0,3
+1495796233491,7,HTTP Request,400,Bad Request,mongo  test books 3-1,text,false,,267,203,1,2,7,0,0
+1495796233491,8,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,225,1,2,8,0,0
+1495796233498,12,HTTP Request,200,OK,mongo  test books 3-1,text,true,,273,209,1,2,12,0,0
+1495796233499,12,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,223,1,2,12,0,0
+1495796233511,4,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,205,1,2,4,0,0
+1495796233511,8,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,219,1,2,8,0,0
+1495796233515,7,HTTP Request,200,OK,mongo  test books 3-1,text,true,,274,209,1,2,7,0,0
+1495796233520,6,HTTP Request,404,Not Found,mongo  test author 2-1,text,false,,263,221,1,1,6,0,0
+1495797030411,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,5,0,0,0
+1495797030414,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,5,0,0,0
+1495797030415,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,5,0,0,0
+1495797030415,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,5,0,0,0
+1495797030415,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,5,0,0,0
+1495797030419,13,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,215,1,6,13,0,1
+1495797030416,19,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,19,0,1
+1495797030420,16,HTTP Request,200,OK,neo4j  test title 7-1,text,true,,3110,235,1,5,16,0,1
+1495797030435,6,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,238,1,4,6,0,0
+1495797030408,45,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,45,0,6
+1495797030410,121,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,2,121,0,1
+1495797030531,30,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,2,29,0,0
+1495797030561,39,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,2,39,0,0
+1495797030601,69,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,69,0,0
+1495797030670,736,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,736,0,0
+1495797030411,1573,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,1566,0,0
+1495797031984,989,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,988,0,0
+1495797032973,988,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129275,209,1,1,986,0,1
+1495797033961,859,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,1,1,853,0,0
+1495797034820,961,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285971,209,1,1,958,0,0
+1495797095798,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10",mongo  test GEO 4-1,text,false,,1068,0,1,8,0,0,0
+1495797095798,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100",mongo  test GEO 4-1,text,false,,1069,0,1,8,0,0,0
+1495797095800,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/1000",mongo  test GEO 4-1,text,false,,1070,0,1,8,0,0,0
+1495797095803,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/10000",mongo  test GEO 4-1,text,false,,1071,0,1,8,0,0,0
+1495797095804,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 32: http://localhost:3000/api/$mongo{ROUTE}22.93086,40.64361/100000",mongo  test GEO 4-1,text,false,,1072,0,1,8,0,0,0
+1495797095796,21,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,220,1,7,21,0,1
+1495797095797,25,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,215,1,6,25,0,0
+1495797095797,26,HTTP Request,200,OK,neo4j  test title 7-1,text,true,,3110,235,1,5,26,0,1
+1495797095797,26,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,238,1,4,26,0,1
+1495797095747,77,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,75,0,3
+1495797095777,103,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,2,103,0,1
+1495797095880,28,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,2,28,0,0
+1495797095908,44,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,2,44,0,0
+1495797095953,72,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,72,0,0
+1495797096025,730,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,730,0,0
+1495797095781,1530,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,1528,0,1
+1495797097311,991,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,991,0,0
+1495797098302,968,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129275,209,1,1,966,0,3
+1495797099270,869,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,1,1,861,0,0
+1495797100139,957,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285971,209,1,1,955,0,0
+1495797190987,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test title -- 7-1,text,false,,1089,0,1,5,0,0,0
+1495797190988,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test title -- 7-1,text,false,,1089,0,1,8,0,0,0
+1495797190994,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test title -- 7-1,text,false,,1089,0,1,8,0,0,0
+1495797190995,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test title -- 7-1,text,false,,1089,0,1,8,0,0,0
+1495797190967,42,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,7,42,0,1
+1495797190930,85,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,6,85,0,5
+1495797190988,47,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,47,0,0
+1495797190989,48,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,215,1,5,48,0,1
+1495797190993,44,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,235,1,4,44,0,1
+1495797191015,70,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,3,70,0,0
+1495797190949,138,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,2,138,0,4
+1495797191089,35,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,2,35,0,0
+1495797191124,39,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,2,39,0,0
+1495797191163,66,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,2,66,0,0
+1495797191231,742,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,2,742,0,0
+1495797190992,1551,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,1550,0,1
+1495797192543,970,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,970,0,0
+1495797193514,966,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129275,209,1,1,965,0,1
+1495797194480,909,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,1,1,903,0,0
+1495797195389,938,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285971,209,1,1,936,0,0
+1495797233609,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,6,0,0,0
+1495797233609,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,6,0,0,0
+1495797233609,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,6,0,0,0
+1495797233610,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,6,0,0,0
+1495797233615,38,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,215,1,7,38,0,0
+1495797233611,41,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,225,1,7,41,0,4
+1495797233610,44,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,7,42,0,4
+1495797233611,44,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,7,44,0,4
+1495797233654,7,HTTP Request,200,OK,neo4j  test title 6-1,text,true,,3110,235,1,6,7,0,0
+1495797233654,8,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,223,1,5,8,0,0
+1495797233654,10,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,238,1,5,10,0,0
+1495797233662,6,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,219,1,4,6,0,0
+1495797233668,2,HTTP Request,200,OK,neo4j  test title 8-1,text,true,,3110,221,1,4,2,0,0
+1495797233590,144,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,3,143,0,3
+1495797233593,142,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,2,142,0,7
+1495797233603,1010,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,1008,0,8
+1495797234613,987,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,987,0,0
+1495797235600,995,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129275,209,1,1,994,0,0
+1495797236595,905,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,1,1,899,0,1
+1495797237500,933,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285971,209,1,1,932,0,0
+1495797266276,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,7,0,0,0
+1495797266276,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,7,0,0,0
+1495797266276,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,8,0,0,0
+1495797266277,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,"Non HTTP response message: Illegal character in path at index 43: http://localhost:3000/api/neo4j/geolocate/${ARGUMENT1},${ARGUMENT2}/${ARGUMENT3}",neo4j test Geolocation -- 7-1,text,false,,1089,0,1,8,0,0,0
+1495797266272,14,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,7,14,0,1
+1495797266273,45,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,220,1,6,45,0,1
+1495797266270,54,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,6,53,0,1
+1495797266277,48,HTTP Request,200,OK,neo4j  test author 8-1,text,true,,3110,225,1,6,48,0,1
+1495797266319,11,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,215,1,6,11,0,0
+1495797266325,6,HTTP Request,200,OK,neo4j  test author 8-1,text,true,,3110,223,1,6,6,0,0
+1495797266325,94,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,6,94,0,0
+1495797266330,90,HTTP Request,200,OK,neo4j test title 5-1,text,true,,3110,238,1,5,90,0,0
+1495797266270,152,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,4,152,0,3
+1495797266331,92,HTTP Request,200,OK,neo4j  test author 8-1,text,true,,3110,219,1,4,92,0,0
+1495797266423,800,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,3,800,0,0
+1495797266274,970,HTTP Request,204,No Content,neo4j  test book 6-1,,true,,111,203,1,2,0,0,1
+1495797267246,34,HTTP Request,204,No Content,neo4j  test book 6-1,,true,,111,209,1,2,0,0,0
+1495797267280,30,HTTP Request,204,No Content,neo4j  test book 6-1,,true,,111,205,1,2,0,0,0
+1495797267310,24,HTTP Request,204,No Content,neo4j  test book 6-1,,true,,111,209,1,2,0,0,0
+1495797266271,1734,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,1726,0,2
+1495797342418,30,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,1,30,0,1
+1495797342448,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,1,26,0,0
+1495797342474,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,1,26,0,0
+1495797342500,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,1,26,0,0
+1495797342526,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,1,26,0,0
+1495797366421,100,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,1,100,0,1
+1495797366522,29,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,1,29,0,0
+1495797366551,43,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,1,43,0,0
+1495797366594,73,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,1,73,0,0
+1495797366667,729,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,1,729,0,0
+1495797390422,988,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,984,0,2
+1495797391410,989,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,1,1,987,0,0
+1495797392399,993,HTTP Request,200,OK,mongo  test books 3-1,text,true,,129275,209,1,1,990,0,0
+1495797393393,969,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,1,1,956,0,1
+1495797394362,958,HTTP Request,200,OK,mongo  test books 3-1,text,true,,285971,209,1,1,955,0,0
+1495797414427,16,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,1,16,0,1
+1495797414443,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,1,5,0,0
+1495797414448,3,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,1,3,0,0
+1495797414451,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,1,4,0,0
+1495797414456,4,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,1,4,0,0
+1495797663684,32,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,1,32,0,1
+1495797663717,29,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,1,29,0,0
+1495797663746,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,1,26,0,0
+1495797663773,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,1,26,0,0
+1495797663799,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,1,26,0,0
+1495797683704,29,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,1,29,0,1
+1495797683733,27,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,1,27,0,0
+1495797683760,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,1,26,0,0
+1495797683786,25,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,1,25,0,0
+1495797683812,29,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,1,29,0,0
+1495797687965,27,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,1,27,0,0
+1495797687993,25,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,1,25,0,0
+1495797688019,25,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,1,25,0,0
+1495797688044,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,1,26,0,0
+1495797688070,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,1,26,0,0
+1495797711970,103,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,1,103,0,3
+1495797712073,30,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,1,30,0,0
+1495797712103,39,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,1,39,0,0
+1495797712142,67,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,1,67,0,0
+1495797712209,732,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,1,732,0,0
+1495797731081,34,HTTP Request,200,OK,mongo  test title 1-1,text,true,,19984,218,1,1,34,0,1
+1495797731116,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,5362,220,1,1,26,0,0
+1495797731142,27,HTTP Request,200,OK,mongo  test title 1-1,text,true,,13007,215,1,1,25,0,0
+1495797731169,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,4752,235,1,1,26,0,0
+1495797731195,26,HTTP Request,200,OK,mongo  test title 1-1,text,true,,16293,238,1,1,26,0,0
+1495797735082,88,HTTP Request,200,OK,mongo  test author 2-1,text,true,,822,222,1,1,88,0,2
+1495797735170,27,HTTP Request,200,OK,mongo  test author 2-1,text,true,,285,225,1,1,27,0,0
+1495797735198,36,HTTP Request,200,OK,mongo  test author 2-1,text,true,,736,223,1,1,36,0,0
+1495797735235,66,HTTP Request,200,OK,mongo  test author 2-1,text,true,,502,219,1,1,66,0,0
+1495797735302,740,HTTP Request,200,OK,mongo  test author 2-1,text,true,,1644,221,1,1,740,0,0
+1495797739089,965,HTTP Request,200,OK,mongo  test books 3-1,text,true,,340084,205,1,1,963,0,2
+1495797740054,1021,HTTP Request,200,OK,mongo  test books 3-1,text,true,,36512,203,2,2,1021,0,0
+1495797740088,1027,HTTP Request,200,OK,mongo  test books 3-2,text,true,,129275,209,3,3,1027,0,2
+1495797741075,945,HTTP Request,200,OK,mongo  test books 3-1,text,true,,1338085,205,2,2,939,0,0
+1495797741089,1428,HTTP Request,200,OK,mongo  test books 3-3,text,true,,285971,209,1,1,1427,0,1
+1495797743107,16,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,223,1,1,16,0,3
+1495797743123,9,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,224,1,1,9,0,0
+1495797743132,5,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,225,1,1,5,0,0
+1495797743137,8,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,226,1,1,8,0,0
+1495797743145,16,HTTP Request,400,Bad Request,mongo  test GEO 4-1,text,false,,275,227,1,1,16,0,0
