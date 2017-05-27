@@ -11,8 +11,12 @@ function cityNameExtractor(book) {
     var sanitized = [];
     var stopBeforeTheLicense = "General Terms of Use and Redistributing";
     if (book) {
-        book = book.substring(0,book.indexOf(stopBeforeTheLicense));
-        caps = book.match(new RegExp(/(([\s][A-Z]|^[A-Z])[a-zA-Z]{0,}){1,}/, "g"));
+
+        if (book.indexOf(stopBeforeTheLicense) >= 0)
+            book = book.substring(0, book.indexOf(stopBeforeTheLicense));
+        var caps = book.match(new RegExp(/(([\s][A-Z]|^[A-Z])[a-zA-Z]{0,}){1,}/, "g"));
+        // console.log(caps)
+
         if (caps)
             for (var i = 0; i <= caps.length; i++) {
                 if (caps[i]) {

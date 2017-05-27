@@ -6,14 +6,17 @@
  */
 var fs = require("fs");
 
-import City from "./../models/city"
+
+var City = require( "./../models/city")
+
+
 
 function readCitiesToObjects(fileLocation) {
     var listOfCityItems = [];
     var allCities = fs.readFileSync(fileLocation);
     allCities.toString().split('\n').forEach(function (item, index, array) {
         var line = item.split('\t');
-        if (line[0] == "filename") ;//skip the header line
+        if (index == 0) ;//skip the header line
         else {
             var cityObject = {};
             cityObject.name = line[0];
@@ -27,25 +30,6 @@ function readCitiesToObjects(fileLocation) {
     return listOfCityItems;
 }
 
-
-function readCitiesToObjectsCB(fileLocation, callback) {
-    var listOfCityItems = [];
-    var allCities = fs.readFileSync(fileLocation);
-    allCities.toString().split('\n').forEach(function (item, index, array) {
-        var line = item.split('\t');
-        if (line[0] == "filename") ;//skip the header line
-        else {
-            var cityObject = {};
-            cityObject.name = line[0];
-            cityObject.asciiname = line[1];
-            cityObject.loc = [line[3], line[2]];
-            cityObject.countryCode = line[4];
-            cityObject.population = line[5];
-            listOfCityItems.push(cityObject);
-        }
-    })
-    callback(listOfBookItems)
-}
 
 
 function hasAllPropertes(cityObject) {
@@ -94,22 +78,11 @@ function readCitiesOneByOne(fileLocation, callback) {
     })
 
     console.log(allArray.length)
-    City.create(allArray, err => {
-        if (err) {
-            console.log(err)
-            console.log("=========================================")
-            // console.log(cityObject);
-            console.log("=========================================")
-        }
 
-
-
-    });
 }
 
 
 module.exports = {
     readCitiesToObjects: readCitiesToObjects,
-    readCitiesToObjectsCB: readCitiesToObjectsCB,
     readCitiesOneByOne: readCitiesOneByOne
 }
