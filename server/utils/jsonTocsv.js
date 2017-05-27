@@ -7,7 +7,7 @@ var fs = require('fs');
 var books = require('../../testMaterial/cities.json');
 try {
   var result = json2csv({ data: books, fields: fields });
-  fs.writeFile('testcities.csv', result, function(err) {
+  fs.writeFile('testCities.csv', result, function(err) {
     if (err) throw err;
     console.log('file saved');
   });
