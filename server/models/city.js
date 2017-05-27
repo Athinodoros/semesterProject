@@ -6,15 +6,17 @@ const Schema = mongoose.Schema;
 const CitySchema = new Schema({
     name: {
         type: String,
+        required: true,
         unique: false
     },
     asciiname: {
         type: String,
+        required: true,
         unique: false
     },
     loc: {
         type: [Number],
-        index: '2dsphere'
+        index: '2d'
     },
     countrycode: {
         type: String,
